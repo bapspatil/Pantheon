@@ -20,9 +20,22 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TECH"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"/>
+                android:layout_marginTop="16dp"
+                android:text="TECH"/>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                app:cardBackgroundColor="@color/colorPrimary"
+                app:cardUseCompatPadding="true">
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/tech_team_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </android.support.v7.widget.CardView>
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 </android.support.design.widget.CoordinatorLayout>

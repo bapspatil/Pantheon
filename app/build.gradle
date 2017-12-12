@@ -42,6 +42,7 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:2.3.0"
     implementation "com.google.code.gson:gson:2.8.2"
     implementation "org.aviran.cookiebar2:cookiebar2:1.0.5"
+    implementation "de.hdodenhof:circleimageview:2.2.0"
 
     annotationProcessor "com.jakewharton:butterknife-compiler:8.8.1"
     annotationProcessor "com.github.bumptech.glide:compiler:4.4.0"

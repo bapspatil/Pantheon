@@ -22,7 +22,7 @@
             app:scrimAnimationDuration="750"
             app:statusBarScrim="@color/colorPrimary"
             app:toolbarId="@id/toolbar"
-            app:title="THE  TEAM">
+            app:title="Team">
 
             <ImageView
                 android:id="@+id/header_iv"

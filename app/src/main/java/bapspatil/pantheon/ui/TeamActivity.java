@@ -40,7 +40,7 @@ public class TeamActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         collapsingToolbar.setExpandedTitleColor(ContextCompat.getColor(this, android.R.color.white));
         collapsingToolbar.setCollapsedTitleTextColor(ContextCompat.getColor(this, android.R.color.white));
-        Typeface typeface = ResourcesCompat.getFont(this, R.font.levi);
+        Typeface typeface = ResourcesCompat.getFont(this, R.font.cabin_medium);
         collapsingToolbar.setCollapsedTitleTypeface(typeface);
         collapsingToolbar.setExpandedTitleTypeface(typeface);
     }

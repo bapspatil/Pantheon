@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 
 import org.aviran.cookiebar2.CookieBar;
 
@@ -22,6 +23,7 @@ import bapspatil.pantheon.model.TeamResponse;
 import bapspatil.pantheon.network.RetrofitAPI;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -35,6 +37,7 @@ public class TeamActivity extends AppCompatActivity {
     @BindView(R.id.appbar) AppBarLayout appBar;
     @BindView(R.id.collapsing_bar) CollapsingToolbarLayout collapsingToolbar;
     @BindView(R.id.toolbar) Toolbar toolbar;
+    @BindView(R.id.tech_progress_bar) SmoothProgressBar techProgressBar;
 
     private void appBarInit() {
         setSupportActionBar(toolbar);
@@ -74,6 +77,8 @@ public class TeamActivity extends AppCompatActivity {
             public void onResponse(Call<TeamResponse> call, Response<TeamResponse> response) {
                 techTeam.addAll(response.body().getTechTeam());
                 techTeamAdapter.notifyDataSetChanged();
+                techProgressBar.setVisibility(View.GONE);
+                techTeamRecyclerView.setVisibility(View.VISIBLE);
             }
 
             @Override

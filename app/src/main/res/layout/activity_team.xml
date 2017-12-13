@@ -21,8 +21,8 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:scrimAnimationDuration="750"
             app:statusBarScrim="@color/colorPrimary"
-            app:toolbarId="@id/toolbar"
-            app:title="Team">
+            app:title="Team"
+            app:toolbarId="@id/toolbar">
 
             <ImageView
                 android:id="@+id/header_iv"
@@ -74,10 +74,21 @@
                         android:textColor="#FFF"
                         android:textStyle="bold"/>
 
+                    <fr.castorflex.android.smoothprogressbar.SmoothProgressBar
+                        android:id="@+id/tech_progress_bar"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_margin="16dp"
+                        android:layout_gravity="center"
+                        android:indeterminate="true"
+                        app:spb_sections_count="4"
+                        app:spb_stroke_width="4dp"/>
+
                     <android.support.v7.widget.RecyclerView
                         android:id="@+id/tech_team_rv"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"/>
                 </LinearLayout>
             </android.support.v7.widget.CardView>
         </LinearLayout>

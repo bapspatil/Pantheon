@@ -78,8 +78,8 @@
                         android:id="@+id/tech_progress_bar"
                         android:layout_width="match_parent"
                         android:layout_height="48dp"
-                        android:layout_margin="16dp"
                         android:layout_gravity="center"
+                        android:layout_margin="16dp"
                         android:indeterminate="true"
                         app:spb_sections_count="4"
                         app:spb_stroke_width="4dp"/>

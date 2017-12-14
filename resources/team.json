@@ -1,7 +1,7 @@
 {
     "tech": [
         {
-            "avatar":"",
+            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/prashanth_reddy.jpg",
             "name":"Prashanth Reddy"
         },
         {
@@ -11,10 +11,6 @@
         {
             "avatar":"",
             "name":"Adithya D"
-        },
-        {
-            "avatar":"",
-            "name":"Gautam Krishnan"
         }
     ]
 }

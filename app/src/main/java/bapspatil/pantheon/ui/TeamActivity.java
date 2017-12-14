@@ -84,7 +84,8 @@ public class TeamActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<TeamResponse> call, Throwable t) {
                 CookieBar.Build(TeamActivity.this)
-                        .setTitle("Error in fetching data")
+                        .setTitle("Network problem, bruh!")
+                        .setMessage("Make sure you're connected to the Internet, and launch the app again.")
                         .show();
             }
         });

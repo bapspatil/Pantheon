@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="bapspatil.pantheon.ui.TeamActivity">
+    tools:context="bapspatil.pantheon.ui.TeamFragment">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
@@ -38,10 +37,17 @@
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"/>
+
     <android.support.v4.widget.NestedScrollView
         android:id="@+id/nested_sv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
@@ -69,26 +75,14 @@
                         android:layout_marginBottom="4dp"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="16dp"
-                        android:fontFamily="@font/cabin_medium"
                         android:text="TECH"
                         android:textColor="#FFF"
                         android:textStyle="bold"/>
 
-                    <fr.castorflex.android.smoothprogressbar.SmoothProgressBar
-                        android:id="@+id/tech_progress_bar"
-                        android:layout_width="match_parent"
-                        android:layout_height="48dp"
-                        android:layout_gravity="center"
-                        android:layout_margin="16dp"
-                        android:indeterminate="true"
-                        app:spb_sections_count="4"
-                        app:spb_stroke_width="4dp"/>
-
                     <android.support.v7.widget.RecyclerView
                         android:id="@+id/tech_team_rv"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:visibility="gone"/>
+                        android:layout_height="wrap_content"/>
                 </LinearLayout>
             </android.support.v7.widget.CardView>
         </LinearLayout>

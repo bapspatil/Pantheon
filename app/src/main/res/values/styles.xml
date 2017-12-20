@@ -1,12 +1,27 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme.Home" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:fontFamily">@font/cabin_medium</item>
+        <item name="android:fontFamily">@font/titillium</item>
+    </style>
+
+    <style name="AppTheme.Updates" parent="AppTheme.Home">
+        <item name="colorPrimary">#FFC107</item>
+        <item name="colorPrimaryDark">#FFA000</item>
+    </style>
+
+    <style name="AppTheme.Events" parent="AppTheme.Home">
+        <item name="colorPrimary">#4CAF50</item>
+        <item name="colorPrimaryDark">#1B5E20</item>
+    </style>
+
+    <style name="AppTheme.Team" parent="AppTheme.Home">
+        <item name="colorPrimary">#3F51B5</item>
+        <item name="colorPrimaryDark">#1A237E</item>
     </style>
 
 </resources>

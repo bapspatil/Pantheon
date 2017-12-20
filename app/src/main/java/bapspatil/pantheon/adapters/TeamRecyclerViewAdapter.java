@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+
 import java.util.ArrayList;
 
 import bapspatil.pantheon.R;
@@ -40,6 +42,7 @@ public class TeamRecyclerViewAdapter extends RecyclerView.Adapter<TeamRecyclerVi
         holder.nameTextView.setText(mTeam.get(position).getName());
         GlideApp.with(mContext)
                 .load(mTeam.get(position).getAvatar())
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
                 .dontAnimate()
                 .placeholder(R.drawable.user_placeholder)
                 .error(R.drawable.user_placeholder)

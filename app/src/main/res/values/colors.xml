@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#F44336</color>
+    <color name="colorPrimaryDark">#B71C1C</color>
+    <color name="colorPrimaryLight">#E57373</color>
+    <color name="colorAccent">#FFFF00</color>
+
+    <color name="updatesPrimary">#FFC107</color>
+    <color name="updatesPrimaryDark">#FFA000</color>
+
+    <color name="eventsPrimary">#4CAF50</color>
+    <color name="eventsPrimaryDark">#1B5E20</color>
+
+    <color name="teamPrimary">#3F51B5</color>
+    <color name="teamPrimaryDark">#1A237E</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
 </resources>

@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 27
+    buildToolsVersion "27.0.2"
     defaultConfig {
         applicationId "bapspatil.pantheon"
         minSdkVersion 19
@@ -43,8 +44,9 @@ dependencies {
     implementation "com.google.code.gson:gson:2.8.2"
     implementation "org.aviran.cookiebar2:cookiebar2:1.0.5"
     implementation "de.hdodenhof:circleimageview:2.2.0"
-    implementation "com.github.castorflex.smoothprogressbar:library:1.0.0"
+//    implementation "com.afollestad:aesthetic:0.4.7"
 
+    implementation 'com.android.support:support-v4:27.0.2'
     annotationProcessor "com.jakewharton:butterknife-compiler:8.8.1"
     annotationProcessor "com.github.bumptech.glide:compiler:4.4.0"
 }

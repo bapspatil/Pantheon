@@ -21,13 +21,13 @@ import butterknife.ButterKnife;
 /**
  * Created by bapspatil
  */
-public class UpdatesFragment extends Fragment {
+public class EventsFragment extends Fragment {
 
     @BindView(R.id.appbar) AppBarLayout appBar;
     @BindView(R.id.collapsing_bar) CollapsingToolbarLayout collapsingToolbar;
     @BindView(R.id.toolbar) Toolbar toolbar;
 
-    public UpdatesFragment() {
+    public EventsFragment() {
         // Required empty public constructor
     }
 
@@ -43,7 +43,7 @@ public class UpdatesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_updates, container, false);
+        View view = inflater.inflate(R.layout.fragment_events, container, false);
         ButterKnife.bind(this, view);
         appBarInit();
 

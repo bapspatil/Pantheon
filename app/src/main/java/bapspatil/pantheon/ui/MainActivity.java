@@ -68,12 +68,18 @@ public class MainActivity extends AppCompatActivity {
                         .commit();
                 break;
             case R.id.action_events:
-                setTheme(R.style.AppTheme_Home);
+                setTheme(R.style.AppTheme_Events);
                 bottomNavigationView.setBackgroundColor(getResources().getColor(R.color.eventsPrimary));
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     getWindow().setStatusBarColor(getResources().getColor(R.color.eventsPrimaryDark));
                     getWindow().setNavigationBarColor(getResources().getColor(R.color.eventsPrimaryDark));
                 }
+
+                getSupportFragmentManager().beginTransaction()
+                        .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
+                        .replace(R.id.main_container, new EventsFragment())
+                        .addToBackStack(null)
+                        .commit();
                 break;
             case R.id.action_team:
                 setTheme(R.style.AppTheme_Team);

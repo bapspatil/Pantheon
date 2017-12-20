@@ -60,6 +60,12 @@ public class MainActivity extends AppCompatActivity {
                     getWindow().setStatusBarColor(getResources().getColor(R.color.updatesPrimaryDark));
                     getWindow().setNavigationBarColor(getResources().getColor(R.color.updatesPrimaryDark));
                 }
+
+                getSupportFragmentManager().beginTransaction()
+                        .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
+                        .replace(R.id.main_container, new UpdatesFragment())
+                        .addToBackStack(null)
+                        .commit();
                 break;
             case R.id.action_events:
                 setTheme(R.style.AppTheme_Home);

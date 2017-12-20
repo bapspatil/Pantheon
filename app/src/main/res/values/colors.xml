@@ -5,15 +5,21 @@
     <color name="colorPrimaryLight">#E57373</color>
     <color name="colorAccent">#FFFF00</color>
 
+    <color name="homePrimary">#F44336</color>
+    <color name="homePrimaryDark">#B71C1C</color>
+
     <color name="updatesPrimary">#FFC107</color>
     <color name="updatesPrimaryDark">#FFA000</color>
 
     <color name="eventsPrimary">#4CAF50</color>
-    <color name="eventsPrimaryDark">#1B5E20</color>
+    <color name="eventsPrimaryDark">#558B2F</color>
 
     <color name="teamPrimary">#3F51B5</color>
     <color name="teamPrimaryDark">#1A237E</color>
 
     <color name="white">#FFFFFF</color>
+    <color name="grey">#BDBDBD</color>
     <color name="black">#000000</color>
+    <color name="pink">#E91E63</color>
+    <color name="purple">#9C27B0</color>
 </resources>

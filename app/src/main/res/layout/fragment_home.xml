@@ -1,0 +1,113 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:attribute="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="bapspatil.pantheon.ui.HomeFragment"
+    tools:ignore="HardcodedText">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <developer.shivam.crescento.CrescentoContainer
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginBottom="24dp"
+            android:elevation="20dp"
+            attribute:curvature="50dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+
+                <ImageView
+                    android:id="@+id/about_app_iv"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="12dp"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@drawable/ic_info_outline_red_500_24dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/levi"
+                    android:gravity="center"
+                    android:text="PANTHEON\n2018"
+                    android:textSize="48sp"/>
+            </RelativeLayout>
+        </developer.shivam.crescento.CrescentoContainer>
+
+        <TextView
+            style="@style/ContextTextViewStyle"
+            android:fontFamily="@font/titillium_bold"
+            android:text="Welcome to the official\nPantheon 2018 companion app!"
+            android:textSize="22sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            style="@style/ContextTextViewStyle"
+            android:text="Brace yourselves....Pantheon is back! RNSIT brings you Pantheon 2018. A bigger, better and brighter edition of the biennial techno-cultural fest at RNS Institute of Technology. Over 50 events leave you spoilt for choice. Like, share and spread the word."/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/share_cv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                attribute:cardBackgroundColor="@color/white"
+                attribute:cardCornerRadius="25dp"
+                attribute:cardElevation="8dp"
+                attribute:cardUseCompatPadding="true">
+
+                <TextView
+                    style="@style/ContextTextViewStyle"
+                    android:text="SHARE THIS APP"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorPrimary"/>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/location_cv"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_gravity="center"
+                android:foreground="?android:attr/selectableItemBackground"
+                attribute:cardBackgroundColor="@color/white"
+                attribute:cardCornerRadius="25dp"
+                attribute:cardElevation="8dp"
+                attribute:cardUseCompatPadding="true">
+
+                <TextView
+                    style="@style/ContextTextViewStyle"
+                    android:text="TAKE ME TO RNSIT"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorPrimary"/>
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

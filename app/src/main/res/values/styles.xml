@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme.Home" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -9,19 +9,34 @@
         <item name="android:fontFamily">@font/titillium</item>
     </style>
 
-    <style name="AppTheme.Updates" parent="AppTheme.Home">
+    <style name="AppTheme.Home" parent="AppTheme">
+        <item name="colorPrimary">#F44336</item>
+        <item name="colorPrimaryDark">#B71C1C</item>
+    </style>
+
+    <style name="AppTheme.Updates" parent="AppTheme">
         <item name="colorPrimary">#FFC107</item>
         <item name="colorPrimaryDark">#FFA000</item>
     </style>
 
-    <style name="AppTheme.Events" parent="AppTheme.Home">
+    <style name="AppTheme.Events" parent="AppTheme">
         <item name="colorPrimary">#4CAF50</item>
         <item name="colorPrimaryDark">#1B5E20</item>
     </style>
 
-    <style name="AppTheme.Team" parent="AppTheme.Home">
+    <style name="AppTheme.Team" parent="AppTheme">
         <item name="colorPrimary">#3F51B5</item>
         <item name="colorPrimaryDark">#1A237E</item>
+    </style>
+
+    <style name="ContextTextViewStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:textColor">@color/white</item>
     </style>
 
 </resources>

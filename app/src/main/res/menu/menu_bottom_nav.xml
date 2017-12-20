@@ -9,24 +9,20 @@
         android:id="@+id/action_home"
         android:enabled="true"
         android:icon="@drawable/ic_home_white_24dp"
-        android:title="Home"
-        app:showAsAction="ifRoom"/>
+        android:title="Home"/>
     <item
         android:id="@+id/action_updates"
         android:enabled="true"
         android:icon="@drawable/ic_rss_feed_white_24dp"
-        android:title="Updates"
-        app:showAsAction="ifRoom"/>
+        android:title="Updates"/>
     <item
         android:id="@+id/action_events"
         android:enabled="true"
         android:icon="@drawable/ic_event_white_24dp"
-        android:title="Events"
-        app:showAsAction="ifRoom"/>
+        android:title="Events"/>
     <item
         android:id="@+id/action_team"
         android:enabled="true"
         android:icon="@drawable/ic_group_white_24dp"
-        android:title="Team"
-        app:showAsAction="ifRoom"/>
+        android:title="Team"/>
 </menu>

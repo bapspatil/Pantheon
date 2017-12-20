@@ -5,7 +5,7 @@ android {
     buildToolsVersion "27.0.2"
     defaultConfig {
         applicationId "bapspatil.pantheon"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
@@ -44,7 +44,8 @@ dependencies {
     implementation "com.google.code.gson:gson:2.8.2"
     implementation "org.aviran.cookiebar2:cookiebar2:1.0.5"
     implementation "de.hdodenhof:circleimageview:2.2.0"
-//    implementation "com.afollestad:aesthetic:0.4.7"
+    implementation "com.github.developer-shivam:Crescento:1.2.1"
+    implementation "com.flaviofaria:kenburnsview:1.0.7"
 
     implementation 'com.android.support:support-v4:27.0.2'
     annotationProcessor "com.jakewharton:butterknife-compiler:8.8.1"

@@ -20,7 +20,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:background="@color/colorPrimary"
-        app:elevation="16dp"
+        app:elevation="20dp"
         app:itemBackground="?android:attr/selectableItemBackground"
         app:itemIconTint="@color/bottom_nav_selector"
         app:itemTextColor="@color/bottom_nav_selector"

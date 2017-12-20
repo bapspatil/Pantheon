@@ -1,5 +1,6 @@
 package bapspatil.pantheon.ui;
 
+import android.content.Context;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -9,6 +10,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.widget.NestedScrollView;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -34,7 +36,7 @@ import retrofit2.Response;
 
 /*
 **  Created by bapspatil
- */
+*/
 
 public class TeamFragment extends Fragment {
 
@@ -53,6 +55,7 @@ public class TeamFragment extends Fragment {
     }
 
     private void appBarInit() {
+        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
         collapsingToolbar.setExpandedTitleColor(ContextCompat.getColor(getContext(), android.R.color.white));
         collapsingToolbar.setCollapsedTitleTextColor(ContextCompat.getColor(getContext(), android.R.color.white));
         Typeface typeface = ResourcesCompat.getFont(getContext(), R.font.titillium);
@@ -65,7 +68,6 @@ public class TeamFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_team, container, false);
         ButterKnife.bind(this, view);
-
         appBarInit();
 
         recyclerViewInit();
@@ -73,6 +75,12 @@ public class TeamFragment extends Fragment {
         fetchTeam();
 
         return view;
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+
     }
 
     private void recyclerViewInit() {
@@ -105,5 +113,4 @@ public class TeamFragment extends Fragment {
             }
         });
     }
-
 }

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        barColorWhenSelected="@color/homePrimary"
+        icon="@drawable/ic_home_white_24dp"
+        id="@+id/action_home"
+        title="Home"/>
+    <tab
+        barColorWhenSelected="@color/updatesPrimary"
+        icon="@drawable/ic_rss_feed_white_24dp"
+        id="@+id/action_updates"
+        title="Updates"/>
+    <tab
+        barColorWhenSelected="@color/eventsPrimary"
+        icon="@drawable/ic_event_white_24dp"
+        id="@+id/action_events"
+        title="Events"/>
+    <tab
+        barColorWhenSelected="@color/teamPrimary"
+        icon="@drawable/ic_group_white_24dp"
+        id="@+id/action_team"
+        title="Team"/>
+
+</tabs>

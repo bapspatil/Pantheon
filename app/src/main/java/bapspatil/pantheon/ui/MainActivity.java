@@ -2,9 +2,12 @@ package bapspatil.pantheon.ui;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
 
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
+
+import org.aviran.cookiebar2.CookieBar;
 
 import bapspatil.pantheon.R;
 import butterknife.BindView;
@@ -13,7 +16,8 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.bottom_nav_view) BottomBar bottomNavigationView;
-    HomeFragment homeFragment;
+    private CookieBar backCookieBar;
+    private HomeFragment homeFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +86,20 @@ public class MainActivity extends AppCompatActivity {
                         .addToBackStack(null)
                         .commit();
                 break;
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        if (backCookieBar != null) {
+            finish();
+        } else {
+            backCookieBar = CookieBar.Build(MainActivity.this)
+                    .setLayoutGravity(Gravity.BOTTOM)
+                    .setTitle("Hit the back button again to quit.")
+                    .setDuration(7000)
+                    .show();
         }
     }
 }

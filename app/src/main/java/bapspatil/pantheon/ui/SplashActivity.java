@@ -20,7 +20,7 @@ public class SplashActivity extends AppCompatActivity {
         hideSystemUI();
         Slide slide = new Slide(Gravity.TOP);
         getWindow().setExitTransition(slide);
-        int SPLASH_TIME_OUT = 1000;
+        int SPLASH_TIME_OUT = 1500;
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

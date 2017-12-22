@@ -112,6 +112,7 @@ public class TeamFragment extends Fragment {
                 CookieBar.Build(getActivity())
                         .setTitle("Network problem, bruh!")
                         .setMessage("Make sure you're connected to the Internet, and launch the app again.")
+                        .setDuration(7000)
                         .show();
                 progressBar.setVisibility(View.GONE);
             }

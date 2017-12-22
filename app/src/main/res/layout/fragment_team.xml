@@ -16,11 +16,11 @@
             android:id="@+id/collapsing_bar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:contentScrim="@color/colorPrimary"
+            app:contentScrim="@color/teamPrimary"
             app:expandedTitleGravity="center"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:scrimAnimationDuration="750"
-            app:statusBarScrim="@color/colorPrimary"
+            app:statusBarScrim="@color/teamPrimary"
             app:title="Team"
             app:toolbarId="@id/toolbar">
 
@@ -42,7 +42,9 @@
         android:id="@+id/progress_bar"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:layout_marginTop="200dp"
+        android:indeterminateTint="@color/teamPrimary"/>
 
     <android.support.v4.widget.NestedScrollView
         android:id="@+id/nested_sv"

@@ -16,11 +16,11 @@
             android:id="@+id/collapsing_bar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:contentScrim="@color/colorPrimary"
+            app:contentScrim="@color/updatesPrimary"
             app:expandedTitleGravity="center"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:scrimAnimationDuration="750"
-            app:statusBarScrim="@color/colorPrimary"
+            app:statusBarScrim="@color/updatesPrimary"
             app:title="Updates"
             app:toolbarId="@id/toolbar">
 

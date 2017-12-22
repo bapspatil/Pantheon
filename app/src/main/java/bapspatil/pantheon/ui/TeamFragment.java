@@ -30,6 +30,7 @@ import bapspatil.pantheon.model.TeamResponse;
 import bapspatil.pantheon.network.RetrofitAPI;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import jp.wasabeef.recyclerview.adapters.ScaleInAnimationAdapter;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -88,7 +89,9 @@ public class TeamFragment extends Fragment {
         techTeamRecyclerView.setLayoutManager(layoutManager);
 
         techTeamAdapter = new TeamRecyclerViewAdapter(getContext(), techTeam);
-        techTeamRecyclerView.setAdapter(techTeamAdapter);
+        ScaleInAnimationAdapter scaleInAnimationAdapter = new ScaleInAnimationAdapter(techTeamAdapter);
+        scaleInAnimationAdapter.setDuration(200);
+        techTeamRecyclerView.setAdapter(scaleInAnimationAdapter);
     }
 
     private void fetchTeam() {

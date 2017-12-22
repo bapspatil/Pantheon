@@ -5,9 +5,11 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.res.ResourcesCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
@@ -15,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import bapspatil.pantheon.R;
+import bapspatil.pantheon.adapters.EventsViewPagerAdapter;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -26,6 +29,10 @@ public class EventsFragment extends Fragment {
     @BindView(R.id.appbar) AppBarLayout appBar;
     @BindView(R.id.collapsing_bar) CollapsingToolbarLayout collapsingToolbar;
     @BindView(R.id.toolbar) Toolbar toolbar;
+    @BindView(R.id.tabs) TabLayout tabLayout;
+    @BindView(R.id.view_pager) ViewPager viewPager;
+
+    EventsViewPagerAdapter eventsViewPagerAdapter;
 
     public EventsFragment() {
         // Required empty public constructor
@@ -38,6 +45,10 @@ public class EventsFragment extends Fragment {
         Typeface typeface = ResourcesCompat.getFont(getContext(), R.font.titillium);
         collapsingToolbar.setCollapsedTitleTypeface(typeface);
         collapsingToolbar.setExpandedTitleTypeface(typeface);
+
+        eventsViewPagerAdapter = new EventsViewPagerAdapter(getActivity().getSupportFragmentManager());
+        viewPager.setAdapter(eventsViewPagerAdapter);
+        tabLayout.setupWithViewPager(viewPager);
     }
 
     @Override

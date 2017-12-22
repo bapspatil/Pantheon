@@ -12,5 +12,47 @@
             "avatar":"",
             "name":"Adithya D"
         }
+    ],
+    "deco": [
+        {
+            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/prashanth_reddy.jpg",
+            "name":"Prashanth Reddy"
+        },
+        {
+            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/bapusaheb_patil.png",
+            "name":"Bapusaheb Patil"
+        },
+        {
+            "avatar":"",
+            "name":"Adithya D"
+        }
+    ],
+    "logistics": [
+        {
+            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/prashanth_reddy.jpg",
+            "name":"Prashanth Reddy"
+        },
+        {
+            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/bapusaheb_patil.png",
+            "name":"Bapusaheb Patil"
+        },
+        {
+            "avatar":"",
+            "name":"Adithya D"
+        }
+    ],
+    "content_writers": [
+        {
+            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/prashanth_reddy.jpg",
+            "name":"Prashanth Reddy"
+        },
+        {
+            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/bapusaheb_patil.png",
+            "name":"Bapusaheb Patil"
+        },
+        {
+            "avatar":"",
+            "name":"Adithya D"
+        }
     ]
 }

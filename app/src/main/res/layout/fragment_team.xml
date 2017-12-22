@@ -38,13 +38,14 @@
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
-    <ProgressBar
+    <com.wang.avi.AVLoadingIndicatorView
         android:id="@+id/progress_bar"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="200dp"
-        android:indeterminateTint="@color/teamPrimary"/>
+        app:indicatorName="LineScaleIndicator"
+        app:indicatorColor="@color/teamPrimary"/>
 
     <android.support.v4.widget.NestedScrollView
         android:id="@+id/nested_sv"

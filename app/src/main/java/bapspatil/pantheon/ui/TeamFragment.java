@@ -17,7 +17,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ProgressBar;
+
+import com.wang.avi.AVLoadingIndicatorView;
 
 import org.aviran.cookiebar2.CookieBar;
 
@@ -48,7 +49,7 @@ public class TeamFragment extends Fragment {
     @BindView(R.id.appbar) AppBarLayout appBar;
     @BindView(R.id.collapsing_bar) CollapsingToolbarLayout collapsingToolbar;
     @BindView(R.id.toolbar) Toolbar toolbar;
-    @BindView(R.id.progress_bar) ProgressBar progressBar;
+    @BindView(R.id.progress_bar) AVLoadingIndicatorView progressBar;
     @BindView(R.id.nested_sv) NestedScrollView scrollView;
 
     public TeamFragment() {

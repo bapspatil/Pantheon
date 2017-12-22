@@ -47,6 +47,7 @@ dependencies {
     implementation "com.github.developer-shivam:Crescento:1.2.1"
     implementation "com.roughike:bottom-bar:2.3.1"
     implementation "jp.wasabeef:recyclerview-animators:2.2.7"
+    implementation "com.wang.avi:library:2.1.3"
 //    implementation "com.github.IntruderShanky:Sectioned-RecyclerView:2.1.1"
 //    implementation "com.flaviofaria:kenburnsview:1.0.7"
 

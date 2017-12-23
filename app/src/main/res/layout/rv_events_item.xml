@@ -32,7 +32,7 @@
             android:fontFamily="@font/titillium_bold"
             android:paddingLeft="8dp"
             android:textColor="@color/white"
-            android:textSize="24sp"
+            android:textSize="22sp"
             app:layout_constraintBottom_toTopOf="@id/time_icon"
             app:layout_constraintLeft_toRightOf="@id/time_icon"
             app:layout_constraintTop_toBottomOf="@id/time_icon"
@@ -47,7 +47,7 @@
             android:paddingLeft="12dp"
             android:paddingRight="12dp"
             android:textColor="@color/white"
-            android:textSize="28sp"
+            android:textSize="24sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/time_tv"
             tools:text="Call Of Duty: Wars"/>

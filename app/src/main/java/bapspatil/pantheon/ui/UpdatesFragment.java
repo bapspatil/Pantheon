@@ -14,7 +14,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+
 import bapspatil.pantheon.R;
+import bapspatil.pantheon.adapters.UpdatesRecyclerViewAdapter;
+import bapspatil.pantheon.model.UpdatesResponse;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -22,10 +26,12 @@ import butterknife.ButterKnife;
  * Created by bapspatil
  */
 public class UpdatesFragment extends Fragment {
-
     @BindView(R.id.appbar) AppBarLayout appBar;
     @BindView(R.id.collapsing_bar) CollapsingToolbarLayout collapsingToolbar;
     @BindView(R.id.toolbar) Toolbar toolbar;
+
+    private ArrayList<UpdatesResponse> updatesList;
+    private UpdatesRecyclerViewAdapter updatesAdapter;
 
     public UpdatesFragment() {
         // Required empty public constructor

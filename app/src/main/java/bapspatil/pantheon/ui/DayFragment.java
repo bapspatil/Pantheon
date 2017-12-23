@@ -32,13 +32,12 @@ import retrofit2.Response;
  */
 
 public class DayFragment extends Fragment {
+    @BindView(R.id.events_rv) RecyclerView eventsRecyclerView;
+    @BindView(R.id.progress_bar) AVLoadingIndicatorView progressBar;
 
     private static final String DAY = "day";
     private ArrayList<Events> eventsList = new ArrayList<>();
     private EventsRecyclerViewAdapter eventsAdapter;
-
-    @BindView(R.id.events_rv) RecyclerView eventsRecyclerView;
-    @BindView(R.id.progress_bar) AVLoadingIndicatorView progressBar;
 
     public DayFragment() {
         // Required empty public constructor

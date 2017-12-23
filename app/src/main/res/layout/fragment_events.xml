@@ -18,7 +18,7 @@
             android:layout_height="150dp"
             app:contentScrim="@color/eventsPrimary"
             app:expandedTitleGravity="center"
-            app:layout_scrollFlags="scroll|enterAlways"
+            app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
             app:scrimAnimationDuration="750"
             app:statusBarScrim="@color/eventsPrimary"
             app:title="Events"
@@ -34,7 +34,7 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="none"/>
+                app:layout_collapseMode="pin"/>
         </android.support.design.widget.CollapsingToolbarLayout>
 
         <android.support.design.widget.TabLayout

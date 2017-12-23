@@ -9,18 +9,29 @@ import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.wang.avi.AVLoadingIndicatorView;
+
+import org.aviran.cookiebar2.CookieBar;
 
 import java.util.ArrayList;
 
 import bapspatil.pantheon.R;
 import bapspatil.pantheon.adapters.UpdatesRecyclerViewAdapter;
 import bapspatil.pantheon.model.UpdatesResponse;
+import bapspatil.pantheon.network.RetrofitAPI;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import jp.wasabeef.recyclerview.adapters.AlphaInAnimationAdapter;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * Created by bapspatil
@@ -29,8 +40,10 @@ public class UpdatesFragment extends Fragment {
     @BindView(R.id.appbar) AppBarLayout appBar;
     @BindView(R.id.collapsing_bar) CollapsingToolbarLayout collapsingToolbar;
     @BindView(R.id.toolbar) Toolbar toolbar;
+    @BindView(R.id.updates_rv) RecyclerView updatesRecyclerView;
+    @BindView(R.id.progress_bar) AVLoadingIndicatorView progressBar;
 
-    private ArrayList<UpdatesResponse> updatesList;
+    private ArrayList<UpdatesResponse> updatesList = new ArrayList<>();
     private UpdatesRecyclerViewAdapter updatesAdapter;
 
     public UpdatesFragment() {
@@ -53,7 +66,44 @@ public class UpdatesFragment extends Fragment {
         ButterKnife.bind(this, view);
         appBarInit();
 
+        recyclerViewInit();
+
+        fetchUpdates();
+
         return view;
+    }
+
+    private void recyclerViewInit() {
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
+        updatesRecyclerView.setLayoutManager(layoutManager);
+
+        updatesAdapter = new UpdatesRecyclerViewAdapter(getContext(), updatesList);
+        AlphaInAnimationAdapter alphaInAnimationAdapter = new AlphaInAnimationAdapter(updatesAdapter);
+        updatesRecyclerView.setAdapter(alphaInAnimationAdapter);
+    }
+
+    private void fetchUpdates() {
+        RetrofitAPI retrofitAPI = RetrofitAPI.retrofit.create(RetrofitAPI.class);
+        final Call<ArrayList<UpdatesResponse>> updatesResponseCall = retrofitAPI.getUpdates();
+        updatesResponseCall.enqueue(new Callback<ArrayList<UpdatesResponse>>() {
+            @Override
+            public void onResponse(Call<ArrayList<UpdatesResponse>> call, Response<ArrayList<UpdatesResponse>> response) {
+                updatesList.addAll(response.body());
+                updatesAdapter.notifyDataSetChanged();
+                progressBar.setVisibility(View.GONE);
+                updatesRecyclerView.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            public void onFailure(Call<ArrayList<UpdatesResponse>> call, Throwable t) {
+                CookieBar.Build(getActivity())
+                        .setTitle("Network problem, bruh!")
+                        .setMessage("Make sure you're connected to the Internet, and launch the app again.")
+                        .setDuration(7000)
+                        .show();
+                progressBar.setVisibility(View.GONE);
+            }
+        });
     }
 
 }

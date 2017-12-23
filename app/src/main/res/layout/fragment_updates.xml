@@ -37,4 +37,32 @@
                 app:layout_collapseMode="pin"/>
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nested_sv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.wang.avi.AVLoadingIndicatorView
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="144dp"
+                app:indicatorColor="@color/updatesPrimary"
+                app:indicatorName="LineScaleIndicator"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/updates_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:nestedScrollingEnabled="false"
+                android:visibility="gone"/>
+        </FrameLayout>
+    </android.support.v4.widget.NestedScrollView>
 </android.support.design.widget.CoordinatorLayout>

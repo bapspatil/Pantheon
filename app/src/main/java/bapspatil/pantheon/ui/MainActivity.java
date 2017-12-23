@@ -1,8 +1,13 @@
 package bapspatil.pantheon.ui;
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
@@ -16,6 +21,7 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.bottom_nav_view) BottomBar bottomNavigationView;
+    @BindView(R.id.toolbar) @Nullable Toolbar toolbar;
     private CookieBar backCookieBar;
     private HomeFragment homeFragment;
 
@@ -54,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
                         .commit();
                 break;
             case R.id.action_updates:
+                setSupportActionBar(toolbar);
                 setTheme(R.style.AppTheme_Updates);
                 getWindow().setStatusBarColor(getResources().getColor(R.color.updatesPrimaryDark));
                 getWindow().setNavigationBarColor(getResources().getColor(R.color.updatesPrimaryDark));
@@ -65,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
                         .commit();
                 break;
             case R.id.action_events:
+                setSupportActionBar(toolbar);
                 setTheme(R.style.AppTheme_Events);
                 getWindow().setStatusBarColor(getResources().getColor(R.color.eventsPrimaryDark));
                 getWindow().setNavigationBarColor(getResources().getColor(R.color.eventsPrimaryDark));
@@ -76,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
                         .commit();
                 break;
             case R.id.action_team:
+                setSupportActionBar(toolbar);
                 setTheme(R.style.AppTheme_Team);
                 getWindow().setStatusBarColor(getResources().getColor(R.color.teamPrimaryDark));
                 getWindow().setNavigationBarColor(getResources().getColor(R.color.teamPrimaryDark));
@@ -99,6 +108,23 @@ public class MainActivity extends AppCompatActivity {
                     .setTitle("Hit the back button again to quit.")
                     .setDuration(7000)
                     .show();
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_about:
+                Toast.makeText(this, "About item clicked!", Toast.LENGTH_LONG).show();
+                return true;
+            default:
+                return true;
         }
     }
 }

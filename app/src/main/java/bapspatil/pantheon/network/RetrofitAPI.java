@@ -1,5 +1,6 @@
 package bapspatil.pantheon.network;
 
+import bapspatil.pantheon.model.EventsResponse;
 import bapspatil.pantheon.model.TeamResponse;
 import retrofit2.Call;
 import retrofit2.Retrofit;
@@ -16,6 +17,9 @@ public interface RetrofitAPI {
 
     @GET("resources/team.json")
     Call<TeamResponse> getTeam();
+
+    @GET("resources/events.json")
+    Call<EventsResponse> getEvents();
 
     Retrofit retrofit = new Retrofit.Builder()
             .baseUrl(BASE_URL)

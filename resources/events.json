@@ -1,0 +1,22 @@
+{
+    "day_one": [
+        {
+            "time": "10:00 AM",
+            "title": "Coming soon!",
+            "body": "Our CAT team will provide you with the events list and their details soon. Stay tuned!",
+            "location": "Admin Block, Room 203",
+            "maxMembers": "3",
+            "contact": "9990088778"
+        }
+    ],
+    "day_two": [
+        {
+            "time": "10:10 AM",
+            "title": "Seriously. We'll let you know.",
+            "body": "We promise to send you a notification once we finalize our events list and the other nitty-gritty details.",
+            "location": "Main Stage Area",
+            "maxMembers": "3",
+            "contact": "7890088778"
+        }
+    ]
+}

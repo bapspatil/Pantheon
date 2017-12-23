@@ -29,6 +29,7 @@ import bapspatil.pantheon.adapters.TeamRecyclerViewAdapter;
 import bapspatil.pantheon.model.Team;
 import bapspatil.pantheon.model.TeamResponse;
 import bapspatil.pantheon.network.RetrofitAPI;
+import bapspatil.pantheon.utils.NetworkUtils;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import jp.wasabeef.recyclerview.adapters.ScaleInAnimationAdapter;
@@ -96,15 +97,19 @@ public class TeamFragment extends Fragment {
     }
 
     private void fetchTeam() {
-        RetrofitAPI retrofitAPI = RetrofitAPI.retrofit.create(RetrofitAPI.class);
+        // Making it work offline
+
+        RetrofitAPI retrofitAPI = NetworkUtils.getCacheEnabledRetrofit(getContext()).create(RetrofitAPI.class);
         Call<TeamResponse> teamResponseCall = retrofitAPI.getTeam();
         teamResponseCall.enqueue(new Callback<TeamResponse>() {
             @Override
             public void onResponse(Call<TeamResponse> call, Response<TeamResponse> response) {
-                techTeam.addAll(response.body().getTechTeam());
-                techTeamAdapter.notifyDataSetChanged();
-                progressBar.setVisibility(View.GONE);
-                scrollView.setVisibility(View.VISIBLE);
+                if(response.body() != null) {
+                    techTeam.addAll(response.body().getTechTeam());
+                    techTeamAdapter.notifyDataSetChanged();
+                    progressBar.setVisibility(View.GONE);
+                    scrollView.setVisibility(View.VISIBLE);
+                }
             }
 
             @Override

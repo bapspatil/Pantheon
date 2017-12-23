@@ -20,6 +20,7 @@ import bapspatil.pantheon.adapters.EventsRecyclerViewAdapter;
 import bapspatil.pantheon.model.Events;
 import bapspatil.pantheon.model.EventsResponse;
 import bapspatil.pantheon.network.RetrofitAPI;
+import bapspatil.pantheon.utils.NetworkUtils;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import jp.wasabeef.recyclerview.adapters.AlphaInAnimationAdapter;
@@ -77,16 +78,18 @@ public class DayFragment extends Fragment {
     }
 
     private void fetchDayEvents(int dayNumber) {
-        RetrofitAPI retrofitAPI = RetrofitAPI.retrofit.create(RetrofitAPI.class);
+        RetrofitAPI retrofitAPI = NetworkUtils.getCacheEnabledRetrofit(getContext()).create(RetrofitAPI.class);
         Call<EventsResponse> eventsResponseCall = retrofitAPI.getEvents();
         if(dayNumber == 0) {
             eventsResponseCall.enqueue(new Callback<EventsResponse>() {
                 @Override
                 public void onResponse(Call<EventsResponse> call, Response<EventsResponse> response) {
-                    eventsList.addAll(response.body().getDayOneEvents());
-                    eventsAdapter.notifyDataSetChanged();
-                    progressBar.setVisibility(View.GONE);
-                    eventsRecyclerView.setVisibility(View.VISIBLE);
+                    if(response.body() != null) {
+                        eventsList.addAll(response.body().getDayOneEvents());
+                        eventsAdapter.notifyDataSetChanged();
+                        progressBar.setVisibility(View.GONE);
+                        eventsRecyclerView.setVisibility(View.VISIBLE);
+                    }
                 }
 
                 @Override
@@ -103,10 +106,12 @@ public class DayFragment extends Fragment {
             eventsResponseCall.enqueue(new Callback<EventsResponse>() {
                 @Override
                 public void onResponse(Call<EventsResponse> call, Response<EventsResponse> response) {
-                    eventsList.addAll(response.body().getDayTwoEvents());
-                    eventsAdapter.notifyDataSetChanged();
-                    progressBar.setVisibility(View.GONE);
-                    eventsRecyclerView.setVisibility(View.VISIBLE);
+                    if(response.body() != null) {
+                        eventsList.addAll(response.body().getDayTwoEvents());
+                        eventsAdapter.notifyDataSetChanged();
+                        progressBar.setVisibility(View.GONE);
+                        eventsRecyclerView.setVisibility(View.VISIBLE);
+                    }
                 }
 
                 @Override

@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.bottom_nav_view) BottomBar bottomNavigationView;
     @BindView(R.id.toolbar) @Nullable Toolbar toolbar;
     private CookieBar backCookieBar;
-    private HomeFragment homeFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +30,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        homeFragment = new HomeFragment();
         getSupportFragmentManager().beginTransaction()
                 .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
-                .replace(R.id.main_container, homeFragment)
+                .replace(R.id.main_container, new HomeFragment())
                 .addToBackStack(null)
                 .commit();
 
@@ -55,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
                 getSupportFragmentManager().beginTransaction()
                         .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
-                        .replace(R.id.main_container, homeFragment)
+                        .replace(R.id.main_container, new HomeFragment())
                         .addToBackStack(null)
                         .commit();
                 break;

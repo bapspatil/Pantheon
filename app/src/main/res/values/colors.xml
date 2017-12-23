@@ -8,8 +8,8 @@
     <color name="homePrimary">#F44336</color>
     <color name="homePrimaryDark">#B71C1C</color>
 
-    <color name="updatesPrimary">#FFC107</color>
-    <color name="updatesPrimaryDark">#FFA000</color>
+    <color name="updatesPrimary">#FFB300</color>
+    <color name="updatesPrimaryDark">#FF8F00</color>
 
     <color name="eventsPrimary">#4CAF50</color>
     <color name="eventsPrimaryDark">#558B2F</color>

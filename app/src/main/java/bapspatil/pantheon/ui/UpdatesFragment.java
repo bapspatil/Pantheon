@@ -26,7 +26,6 @@ import bapspatil.pantheon.R;
 import bapspatil.pantheon.adapters.UpdatesRecyclerViewAdapter;
 import bapspatil.pantheon.model.UpdatesResponse;
 import bapspatil.pantheon.network.RetrofitAPI;
-import bapspatil.pantheon.utils.NetworkUtils;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import jp.wasabeef.recyclerview.adapters.AlphaInAnimationAdapter;
@@ -84,7 +83,7 @@ public class UpdatesFragment extends Fragment {
     }
 
     private void fetchUpdates() {
-        RetrofitAPI retrofitAPI = NetworkUtils.getCacheEnabledRetrofit(getActivity()).create(RetrofitAPI.class);
+        RetrofitAPI retrofitAPI = RetrofitAPI.retrofit.create(RetrofitAPI.class);
         Call<ArrayList<UpdatesResponse>> updatesResponseCall = retrofitAPI.getUpdates();
         updatesResponseCall.enqueue(new Callback<ArrayList<UpdatesResponse>>() {
             @Override

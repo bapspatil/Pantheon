@@ -9,14 +9,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.wang.avi.AVLoadingIndicatorView;
+
+import org.aviran.cookiebar2.CookieBar;
+
 import java.util.ArrayList;
 
 import bapspatil.pantheon.R;
 import bapspatil.pantheon.adapters.EventsRecyclerViewAdapter;
 import bapspatil.pantheon.model.Events;
+import bapspatil.pantheon.model.EventsResponse;
+import bapspatil.pantheon.network.RetrofitAPI;
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import jp.wasabeef.recyclerview.adapters.ScaleInAnimationAdapter;
+import jp.wasabeef.recyclerview.adapters.AlphaInAnimationAdapter;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * Created by bapspatil
@@ -25,11 +34,11 @@ import jp.wasabeef.recyclerview.adapters.ScaleInAnimationAdapter;
 public class DayFragment extends Fragment {
 
     private static final String DAY = "day";
-    private int dayNumber;
     private ArrayList<Events> eventsList = new ArrayList<>();
     private EventsRecyclerViewAdapter eventsAdapter;
 
     @BindView(R.id.events_rv) RecyclerView eventsRecyclerView;
+    @BindView(R.id.progress_bar) AVLoadingIndicatorView progressBar;
 
     public DayFragment() {
         // Required empty public constructor
@@ -52,8 +61,8 @@ public class DayFragment extends Fragment {
         recyclerViewInit();
 
         if (getArguments() != null) {
-            dayNumber = getArguments().getInt(DAY);
-            fetchDayEvents();
+            int dayNumber = getArguments().getInt(DAY);
+            fetchDayEvents(dayNumber);
         }
 
         return view;
@@ -64,16 +73,53 @@ public class DayFragment extends Fragment {
         eventsRecyclerView.setLayoutManager(layoutManager);
 
         eventsAdapter = new EventsRecyclerViewAdapter(getContext(), eventsList);
-        ScaleInAnimationAdapter scaleInAnimationAdapter = new ScaleInAnimationAdapter(eventsAdapter);
-        scaleInAnimationAdapter.setDuration(200);
-        eventsRecyclerView.setAdapter(scaleInAnimationAdapter);
+        AlphaInAnimationAdapter alphaInAnimationAdapter = new AlphaInAnimationAdapter(eventsAdapter);
+        eventsRecyclerView.setAdapter(alphaInAnimationAdapter);
     }
 
-    private void fetchDayEvents() {
-        if (dayNumber == 0) {
+    private void fetchDayEvents(int dayNumber) {
+        RetrofitAPI retrofitAPI = RetrofitAPI.retrofit.create(RetrofitAPI.class);
+        Call<EventsResponse> eventsResponseCall = retrofitAPI.getEvents();
+        if(dayNumber == 0) {
+            eventsResponseCall.enqueue(new Callback<EventsResponse>() {
+                @Override
+                public void onResponse(Call<EventsResponse> call, Response<EventsResponse> response) {
+                    eventsList.addAll(response.body().getDayOneEvents());
+                    eventsAdapter.notifyDataSetChanged();
+                    progressBar.setVisibility(View.GONE);
+                    eventsRecyclerView.setVisibility(View.VISIBLE);
+                }
 
+                @Override
+                public void onFailure(Call<EventsResponse> call, Throwable t) {
+                    CookieBar.Build(getActivity())
+                            .setTitle("Network problem, bruh!")
+                            .setMessage("Make sure you're connected to the Internet, and launch the app again.")
+                            .setDuration(7000)
+                            .show();
+                    progressBar.setVisibility(View.GONE);
+                }
+            });
         } else {
+            eventsResponseCall.enqueue(new Callback<EventsResponse>() {
+                @Override
+                public void onResponse(Call<EventsResponse> call, Response<EventsResponse> response) {
+                    eventsList.addAll(response.body().getDayTwoEvents());
+                    eventsAdapter.notifyDataSetChanged();
+                    progressBar.setVisibility(View.GONE);
+                    eventsRecyclerView.setVisibility(View.VISIBLE);
+                }
 
+                @Override
+                public void onFailure(Call<EventsResponse> call, Throwable t) {
+                    CookieBar.Build(getActivity())
+                            .setTitle("Network problem, bruh!")
+                            .setMessage("Make sure you're connected to the Internet, and launch the app again.")
+                            .setDuration(7000)
+                            .show();
+                    progressBar.setVisibility(View.GONE);
+                }
+            });
         }
     }
 

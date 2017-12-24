@@ -30,12 +30,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        getSupportFragmentManager().beginTransaction()
-                .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
-                .replace(R.id.main_container, new HomeFragment())
-                .addToBackStack(null)
-                .commit();
-
         bottomNavigationView.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelected(int tabId) {

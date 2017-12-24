@@ -10,7 +10,8 @@
         android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="@drawable/gradient_updates">
+        android:background="@drawable/gradient_updates"
+        android:translationZ="20dp">
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/collapsing_bar"
@@ -61,6 +62,7 @@
                 android:id="@+id/updates_rv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:nestedScrollingEnabled="false"
                 android:visibility="gone"/>
         </FrameLayout>
     </android.support.v4.widget.NestedScrollView>

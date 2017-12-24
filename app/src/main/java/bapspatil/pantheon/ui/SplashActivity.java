@@ -18,8 +18,12 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         hideSystemUI();
-        Slide slide = new Slide(Gravity.TOP);
-        getWindow().setExitTransition(slide);
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            Slide slide = new Slide(Gravity.TOP);
+            getWindow().setExitTransition(slide);
+        }
+
         int SPLASH_TIME_OUT = 1500;
         new Handler().postDelayed(new Runnable() {
             @Override

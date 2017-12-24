@@ -10,8 +10,7 @@
         android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="@drawable/gradient_events"
-        android:translationZ="20dp">
+        android:background="@drawable/gradient_events">
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/collapsing_bar"

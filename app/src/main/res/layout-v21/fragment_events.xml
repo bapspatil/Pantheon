@@ -4,24 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="bapspatil.pantheon.ui.UpdatesFragment">
+    tools:context="bapspatil.pantheon.ui.EventsFragment">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="@drawable/gradient_updates">
+        android:background="@drawable/gradient_events"
+        android:translationZ="20dp">
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/collapsing_bar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:contentScrim="@color/updatesPrimary"
+            android:layout_height="150dp"
+            app:contentScrim="@color/eventsPrimary"
             app:expandedTitleGravity="center"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
             app:scrimAnimationDuration="750"
-            app:statusBarScrim="@color/updatesPrimary"
-            app:title="Updates"
+            app:statusBarScrim="@color/eventsPrimary"
+            app:title="Events"
             app:toolbarId="@id/toolbar">
 
             <ImageView
@@ -36,32 +37,22 @@
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"/>
         </android.support.design.widget.CollapsingToolbarLayout>
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:layout_scrollFlags="snap"
+            app:tabGravity="fill"
+            app:tabIndicatorColor="@color/white"
+            app:tabMode="fixed"
+            app:tabSelectedTextColor="@color/white"
+            app:tabTextColor="@color/grey"/>
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.v4.widget.NestedScrollView
-        android:id="@+id/nested_sv"
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <com.wang.avi.AVLoadingIndicatorView
-                android:id="@+id/progress_bar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="144dp"
-                app:indicatorColor="@color/updatesPrimary"
-                app:indicatorName="LineScaleIndicator"/>
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/updates_rv"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:visibility="gone"/>
-        </FrameLayout>
-    </android.support.v4.widget.NestedScrollView>
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 </android.support.design.widget.CoordinatorLayout>

@@ -1,9 +1,11 @@
 package bapspatil.pantheon.ui;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.transition.Slide;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -30,6 +32,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            Slide slide = new Slide(Gravity.BOTTOM);
+            getWindow().setEnterTransition(slide);
+        }
+
         bottomNavigationView.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelected(int tabId) {
@@ -42,8 +49,10 @@ public class MainActivity extends AppCompatActivity {
         switch (item) {
             case R.id.action_home:
                 setTheme(R.style.AppTheme_Home);
-                getWindow().setStatusBarColor(getResources().getColor(R.color.homePrimaryDark));
-                getWindow().setNavigationBarColor(getResources().getColor(R.color.homePrimaryDark));
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    getWindow().setStatusBarColor(getResources().getColor(R.color.homePrimaryDark));
+                    getWindow().setNavigationBarColor(getResources().getColor(R.color.homePrimaryDark));
+                }
 
                 getSupportFragmentManager().beginTransaction()
                         .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
@@ -54,8 +63,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_updates:
                 setSupportActionBar(toolbar);
                 setTheme(R.style.AppTheme_Updates);
-                getWindow().setStatusBarColor(getResources().getColor(R.color.updatesPrimaryDark));
-                getWindow().setNavigationBarColor(getResources().getColor(R.color.updatesPrimaryDark));
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    getWindow().setStatusBarColor(getResources().getColor(R.color.updatesPrimaryDark));
+                    getWindow().setNavigationBarColor(getResources().getColor(R.color.updatesPrimaryDark));
+                }
 
                 getSupportFragmentManager().beginTransaction()
                         .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
@@ -66,8 +77,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_events:
                 setSupportActionBar(toolbar);
                 setTheme(R.style.AppTheme_Events);
-                getWindow().setStatusBarColor(getResources().getColor(R.color.eventsPrimaryDark));
-                getWindow().setNavigationBarColor(getResources().getColor(R.color.eventsPrimaryDark));
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    getWindow().setStatusBarColor(getResources().getColor(R.color.eventsPrimaryDark));
+                    getWindow().setNavigationBarColor(getResources().getColor(R.color.eventsPrimaryDark));
+                }
 
                 getSupportFragmentManager().beginTransaction()
                         .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
@@ -78,8 +91,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_team:
                 setSupportActionBar(toolbar);
                 setTheme(R.style.AppTheme_Team);
-                getWindow().setStatusBarColor(getResources().getColor(R.color.teamPrimaryDark));
-                getWindow().setNavigationBarColor(getResources().getColor(R.color.teamPrimaryDark));
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    getWindow().setStatusBarColor(getResources().getColor(R.color.teamPrimaryDark));
+                    getWindow().setNavigationBarColor(getResources().getColor(R.color.teamPrimaryDark));
+                }
 
                 getSupportFragmentManager().beginTransaction()
                         .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)

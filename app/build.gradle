@@ -7,7 +7,7 @@ android {
     buildToolsVersion "27.0.2"
     defaultConfig {
         applicationId "bapspatil.pantheon"
-        minSdkVersion 21
+        minSdkVersion 19
         targetSdkVersion 27
         versionCode 1
         versionName "one.zero"

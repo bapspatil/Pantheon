@@ -8,3 +8,5 @@
 /captures
 .externalNativeBuild
 /gradle.properties
+app/google-services.json
+app/release/

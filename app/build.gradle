@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.firebase.firebase-perf'
 
 android {
     compileSdkVersion 27
@@ -54,6 +55,7 @@ dependencies {
 
     implementation "com.google.firebase:firebase-core:$firebase"
     implementation "com.google.firebase:firebase-messaging:$firebase"
+    implementation "com.google.firebase:firebase-perf:$firebase"
 
     annotationProcessor "com.jakewharton:butterknife-compiler:8.8.1"
     annotationProcessor "com.github.bumptech.glide:compiler:4.4.0"

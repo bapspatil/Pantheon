@@ -111,13 +111,13 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="16dp"
                         android:fontFamily="@font/titillium_bold"
-                        android:text="TECH"
+                        android:text="DECORATIONS"
                         android:textColor="#FFF"/>
 
-                    <!--<android.support.v7.widget.RecyclerView
-                        android:id="@+id/tech_team_rv"
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/deco_team_rv"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>-->
+                        android:layout_height="wrap_content"/>
                 </LinearLayout>
             </android.support.v7.widget.CardView>
 
@@ -141,13 +141,13 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="16dp"
                         android:fontFamily="@font/titillium_bold"
-                        android:text="TECH"
+                        android:text="LOGISTICS"
                         android:textColor="#FFF"/>
 
-                    <!--<android.support.v7.widget.RecyclerView
-                        android:id="@+id/tech_team_rv"
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/logistics_team_rv"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>-->
+                        android:layout_height="wrap_content"/>
                 </LinearLayout>
             </android.support.v7.widget.CardView>
 

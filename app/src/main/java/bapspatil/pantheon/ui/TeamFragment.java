@@ -44,9 +44,13 @@ import retrofit2.Response;
 public class TeamFragment extends Fragment {
 
     private ArrayList<Team> techTeam = new ArrayList<>();
-    private TeamRecyclerViewAdapter techTeamAdapter;
+    private ArrayList<Team> decoTeam = new ArrayList<>();
+    private ArrayList<Team> logisticsTeam = new ArrayList<>();
+    private TeamRecyclerViewAdapter techTeamAdapter, decoTeamAdapter, logisticsTeamAdapter;
 
     @BindView(R.id.tech_team_rv) RecyclerView techTeamRecyclerView;
+    @BindView(R.id.deco_team_rv) RecyclerView decoTeamRecyclerView;
+    @BindView(R.id.logistics_team_rv) RecyclerView logisticsTeamRecyclerView;
     @BindView(R.id.appbar) AppBarLayout appBar;
     @BindView(R.id.collapsing_bar) CollapsingToolbarLayout collapsingToolbar;
     @BindView(R.id.toolbar) Toolbar toolbar;
@@ -89,16 +93,20 @@ public class TeamFragment extends Fragment {
     private void recyclerViewInit() {
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
         techTeamRecyclerView.setLayoutManager(layoutManager);
+        decoTeamRecyclerView.setLayoutManager(layoutManager);
+        logisticsTeamRecyclerView.setLayoutManager(layoutManager);
 
         techTeamAdapter = new TeamRecyclerViewAdapter(getContext(), techTeam);
-        ScaleInAnimationAdapter scaleInAnimationAdapter = new ScaleInAnimationAdapter(techTeamAdapter);
-        scaleInAnimationAdapter.setDuration(200);
-        techTeamRecyclerView.setAdapter(scaleInAnimationAdapter);
+        decoTeamAdapter = new TeamRecyclerViewAdapter(getContext(), decoTeam);
+        logisticsTeamAdapter = new TeamRecyclerViewAdapter(getContext(), logisticsTeam);
+
+        techTeamRecyclerView.setAdapter(animatedAdapter(techTeamAdapter));
+        decoTeamRecyclerView.setAdapter(animatedAdapter(decoTeamAdapter));
+        logisticsTeamRecyclerView.setAdapter(animatedAdapter(logisticsTeamAdapter));
     }
 
     private void fetchTeam() {
         // Making it work offline
-
         RetrofitAPI retrofitAPI = NetworkUtils.getCacheEnabledRetrofit(getContext()).create(RetrofitAPI.class);
         Call<TeamResponse> teamResponseCall = retrofitAPI.getTeam();
         teamResponseCall.enqueue(new Callback<TeamResponse>() {
@@ -107,6 +115,13 @@ public class TeamFragment extends Fragment {
                 if(response.body() != null) {
                     techTeam.addAll(response.body().getTechTeam());
                     techTeamAdapter.notifyDataSetChanged();
+
+                    decoTeam.addAll(response.body().getDecoTeam());
+                    decoTeamAdapter.notifyDataSetChanged();
+
+                    logisticsTeam.addAll(response.body().getLogisticsTeam());
+                    logisticsTeamAdapter.notifyDataSetChanged();
+
                     progressBar.setVisibility(View.GONE);
                     scrollView.setVisibility(View.VISIBLE);
                 }
@@ -122,5 +137,11 @@ public class TeamFragment extends Fragment {
                 progressBar.setVisibility(View.GONE);
             }
         });
+    }
+
+    private ScaleInAnimationAdapter animatedAdapter(TeamRecyclerViewAdapter teamRecyclerViewAdapter) {
+        ScaleInAnimationAdapter scaleInAnimationAdapter = new ScaleInAnimationAdapter(teamRecyclerViewAdapter);
+        scaleInAnimationAdapter.setDuration(200);
+        return scaleInAnimationAdapter;
     }
 }

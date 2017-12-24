@@ -13,9 +13,10 @@ import java.util.ArrayList;
 
 public class TeamResponse implements Parcelable {
     @SerializedName("tech") private ArrayList<Team> techTeam;
+    @SerializedName("deco") private ArrayList<Team> decoTeam;
+    @SerializedName("logistics") private ArrayList<Team> logisticsTeam;
 
     public ArrayList<Team> getTechTeam() {
-
         return techTeam;
     }
 
@@ -23,12 +24,31 @@ public class TeamResponse implements Parcelable {
         this.techTeam = techTeam;
     }
 
-    public TeamResponse() {
+    public ArrayList<Team> getDecoTeam() {
+        return decoTeam;
     }
 
-    public TeamResponse(ArrayList<Team> techTeam) {
+    public void setDecoTeam(ArrayList<Team> decoTeam) {
+        this.decoTeam = decoTeam;
+    }
+
+    public ArrayList<Team> getLogisticsTeam() {
+        return logisticsTeam;
+    }
+
+    public void setLogisticsTeam(ArrayList<Team> logisticsTeam) {
+        this.logisticsTeam = logisticsTeam;
+    }
+
+    public TeamResponse() {
+
+    }
+
+    public TeamResponse(ArrayList<Team> techTeam, ArrayList<Team> decoTeam, ArrayList<Team> logisticsTeam) {
 
         this.techTeam = techTeam;
+        this.decoTeam = decoTeam;
+        this.logisticsTeam = logisticsTeam;
     }
 
     @Override
@@ -38,12 +58,15 @@ public class TeamResponse implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeList(this.techTeam);
+        dest.writeTypedList(this.techTeam);
+        dest.writeTypedList(this.decoTeam);
+        dest.writeTypedList(this.logisticsTeam);
     }
 
     protected TeamResponse(Parcel in) {
-        this.techTeam = new ArrayList<Team>();
-        in.readList(this.techTeam, Team.class.getClassLoader());
+        this.techTeam = in.createTypedArrayList(Team.CREATOR);
+        this.decoTeam = in.createTypedArrayList(Team.CREATOR);
+        this.logisticsTeam = in.createTypedArrayList(Team.CREATOR);
     }
 
     public static final Creator<TeamResponse> CREATOR = new Creator<TeamResponse>() {

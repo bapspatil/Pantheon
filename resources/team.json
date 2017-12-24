@@ -15,30 +15,18 @@
     ],
     "deco": [
         {
-            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/prashanth_reddy.jpg",
-            "name":"Prashanth Reddy"
+            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/praveen.jpg",
+            "name":"Praveen"
         },
         {
-            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/bapusaheb_patil.png",
-            "name":"Bapusaheb Patil"
-        },
-        {
-            "avatar":"",
-            "name":"Adithya D"
+            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/namratha_bhat.jpg",
+            "name":"Namratha Bhat"
         }
     ],
     "logistics": [
         {
-            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/prashanth_reddy.jpg",
-            "name":"Prashanth Reddy"
-        },
-        {
-            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/bapusaheb_patil.png",
-            "name":"Bapusaheb Patil"
-        },
-        {
-            "avatar":"",
-            "name":"Adithya D"
+            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/sumukh.jpg",
+            "name":"Sumukh"
         }
     ],
     "content_writers": [

@@ -26,6 +26,7 @@ repositories {
 
 ext {
     sup = '27.0.2'
+    firebase = '11.8.0'
 }
 
 dependencies {
@@ -51,6 +52,12 @@ dependencies {
 //    implementation "com.github.IntruderShanky:Sectioned-RecyclerView:2.1.1"
 //    implementation "com.flaviofaria:kenburnsview:1.0.7"
 
+    implementation "com.google.firebase:firebase-core:$firebase"
+    implementation "com.google.firebase:firebase-messaging:$firebase"
+
     annotationProcessor "com.jakewharton:butterknife-compiler:8.8.1"
     annotationProcessor "com.github.bumptech.glide:compiler:4.4.0"
 }
+
+
+apply plugin: 'com.google.gms.google-services'

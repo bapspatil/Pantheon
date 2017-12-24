@@ -1,14 +1,15 @@
 package bapspatil.pantheon.ui;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
@@ -122,7 +123,9 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_about:
-                Toast.makeText(this, "About item clicked!", Toast.LENGTH_LONG).show();
+                Intent i = new Intent(MainActivity.this, AboutActivity.class);
+                ActivityOptionsCompat options = ActivityOptionsCompat.makeCustomAnimation(MainActivity.this, android.R.anim.fade_in, android.R.anim.fade_out);
+                startActivity(i, options.toBundle());
                 return true;
             default:
                 return true;

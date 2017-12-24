@@ -4,7 +4,7 @@ apply plugin: 'io.fabric' // Fabric's Crashlytics Gradle Plugin
 
 android {
     compileSdkVersion 27
-    buildToolsVersion "27.0.2"
+    buildToolsVersion "27.0.3"
     defaultConfig {
         applicationId "bapspatil.pantheon"
         minSdkVersion 19

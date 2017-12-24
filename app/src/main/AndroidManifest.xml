@@ -30,14 +30,20 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.AboutActivity"
+            android:launchMode="singleTop"
+            android:parentActivityName=".ui.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AboutAppTheme">
+        </activity>
 
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
-            android:resource="@drawable/ic_stat_notification" />
+            android:resource="@drawable/ic_stat_notification"/>
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_color"
-            android:resource="@color/homePrimary" />
-
+            android:resource="@color/homePrimary"/>
     </application>
 
 </manifest>

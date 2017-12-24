@@ -9,6 +9,15 @@
         <item name="android:fontFamily">@font/titillium</item>
     </style>
 
+    <style name="AboutAppTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/titillium</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
     <style name="AppTheme.Home" parent="AppTheme">
         <item name="colorPrimary">#F44336</item>
         <item name="colorPrimaryDark">#B71C1C</item>

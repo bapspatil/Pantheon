@@ -4,6 +4,7 @@ package bapspatil.pantheon.ui;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
@@ -68,6 +69,15 @@ public class HomeFragment extends Fragment {
                 Intent locationIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(location));
                 startActivity(locationIntent);
 
+            }
+        });
+
+        aboutAppImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getActivity(), AboutActivity.class);
+                ActivityOptionsCompat options = ActivityOptionsCompat.makeCustomAnimation(getActivity(), android.R.anim.fade_in, android.R.anim.fade_out);
+                startActivity(i, options.toBundle());
             }
         });
         return view;

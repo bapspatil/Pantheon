@@ -6,6 +6,6 @@
     public *;
 }
 
-# For GSON and Retrofit
+# For Retrofit
 -dontwarn okio.**
 -dontwarn javax.annotation.**

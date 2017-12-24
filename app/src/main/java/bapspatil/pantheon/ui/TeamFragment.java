@@ -91,18 +91,17 @@ public class TeamFragment extends Fragment {
     }
 
     private void recyclerViewInit() {
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
-        techTeamRecyclerView.setLayoutManager(layoutManager);
-        decoTeamRecyclerView.setLayoutManager(layoutManager);
-        logisticsTeamRecyclerView.setLayoutManager(layoutManager);
+        techTeamRecyclerView.setLayoutManager(lLM());
+        decoTeamRecyclerView.setLayoutManager(lLM());
+        logisticsTeamRecyclerView.setLayoutManager(lLM());
 
         techTeamAdapter = new TeamRecyclerViewAdapter(getContext(), techTeam);
         decoTeamAdapter = new TeamRecyclerViewAdapter(getContext(), decoTeam);
         logisticsTeamAdapter = new TeamRecyclerViewAdapter(getContext(), logisticsTeam);
 
-        techTeamRecyclerView.setAdapter(animatedAdapter(techTeamAdapter));
-        decoTeamRecyclerView.setAdapter(animatedAdapter(decoTeamAdapter));
-        logisticsTeamRecyclerView.setAdapter(animatedAdapter(logisticsTeamAdapter));
+        techTeamRecyclerView.setAdapter(animate(techTeamAdapter));
+        decoTeamRecyclerView.setAdapter(animate(decoTeamAdapter));
+        logisticsTeamRecyclerView.setAdapter(animate(logisticsTeamAdapter));
     }
 
     private void fetchTeam() {
@@ -139,7 +138,11 @@ public class TeamFragment extends Fragment {
         });
     }
 
-    private ScaleInAnimationAdapter animatedAdapter(TeamRecyclerViewAdapter teamRecyclerViewAdapter) {
+    private RecyclerView.LayoutManager lLM() {
+        return new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+    }
+
+    private ScaleInAnimationAdapter animate(TeamRecyclerViewAdapter teamRecyclerViewAdapter) {
         ScaleInAnimationAdapter scaleInAnimationAdapter = new ScaleInAnimationAdapter(teamRecyclerViewAdapter);
         scaleInAnimationAdapter.setDuration(200);
         return scaleInAnimationAdapter;

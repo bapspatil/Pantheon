@@ -15,10 +15,6 @@
     ],
     "deco": [
         {
-            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/praveen.jpg",
-            "name":"Praveen"
-        },
-        {
             "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/namratha_bhat.jpg",
             "name":"Namratha Bhat"
         }

@@ -9,12 +9,13 @@ android {
         applicationId "bapspatil.pantheon"
         minSdkVersion 19
         targetSdkVersion 27
-        versionCode 4
+        versionCode 5
         versionName "one.zero"
     }
     buildTypes {
         release {
-            minifyEnabled false
+            shrinkResources true
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }

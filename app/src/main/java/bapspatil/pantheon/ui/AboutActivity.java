@@ -5,12 +5,20 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import bapspatil.pantheon.BuildConfig;
 import bapspatil.pantheon.R;
+import bapspatil.pantheon.adapters.LibrariesRecyclerViewAdapter;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -21,6 +29,8 @@ public class AboutActivity extends AppCompatActivity {
     @BindView(R.id.github_iv) ImageView githubButton;
     @BindView(R.id.twitter_iv) ImageView twitterButton;
     @BindView(R.id.chrome_iv) ImageView chromeButton;
+    @BindView(R.id.version_tv) TextView versionTextView;
+    @BindView(R.id.libraries_rv) RecyclerView librariesRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +40,24 @@ public class AboutActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(null);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        versionTextView.setText(BuildConfig.VERSION_NAME + "\n(version code: " + BuildConfig.VERSION_CODE + ")" );
+
+        ArrayList<String> libraries = new ArrayList<>(Arrays.asList(
+                "Android Support Libraries",
+                "GSON | google",
+                "Glide | bumptech",
+                "Butter Knife | jakewharton",
+                "Retrofit | squareup",
+                "CookieBar2 | aviranabady",
+                "CircleImageView | hdodenhof",
+                "Crescento | developer-shivam",
+                "BottomBar | roughike",
+                "Recyclerview-Animators | wasabeef",
+                "AVLoadingIndicatorView | 81813780"
+        ));
+        librariesRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        librariesRecyclerView.setAdapter(new LibrariesRecyclerViewAdapter(this, libraries));
 
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override

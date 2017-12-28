@@ -30,9 +30,13 @@ public class EventsViewPagerAdapter extends FragmentStatePagerAdapter {
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {
-        if(position == 0)
-            return "DAY 1";
-        else
-            return "DAY 2";
+        switch (position) {
+            case 0:
+                return "DAY 1";
+            case 1:
+                return "DAY 2";
+            default:
+                return "DAY 1";
+        }
     }
 }

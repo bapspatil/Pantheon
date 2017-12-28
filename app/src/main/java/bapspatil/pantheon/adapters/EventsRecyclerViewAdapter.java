@@ -7,25 +7,25 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
 import bapspatil.pantheon.R;
-import bapspatil.pantheon.model.Events;
+import bapspatil.pantheon.model.Event;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * Created by bapspatil
  */
 
 public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecyclerViewAdapter.EventsViewHolder> {
-    private ArrayList<Events> mEventsList;
+    private ArrayList<Event> mEventsList;
     private Context mContext;
 
-    public EventsRecyclerViewAdapter(Context context, ArrayList<Events> eventsList) {
+    public EventsRecyclerViewAdapter(Context context, ArrayList<Event> eventsList) {
         this.mContext = context;
         this.mEventsList = eventsList;
     }
@@ -67,7 +67,7 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
         @BindView(R.id.body_tv) TextView mBodyTextView;
         @BindView(R.id.location_tv) TextView mLocationTextView;
         @BindView(R.id.members_tv) TextView mMembersTextView;
-        @BindView(R.id.call_iv) ImageView mCallImageView;
+        @BindView(R.id.call_iv) CircleImageView mCallImageView;
 
         public EventsViewHolder(View itemView) {
             super(itemView);

@@ -12,22 +12,22 @@ import java.util.ArrayList;
  */
 
 public class EventsResponse implements Parcelable {
-    @SerializedName("day_one") private ArrayList<Events> dayOneEvents;
-    @SerializedName("day_two") private ArrayList<Events> dayTwoEvents;
+    @SerializedName("day_one") private ArrayList<Event> dayOneEvents;
+    @SerializedName("day_two") private ArrayList<Event> dayTwoEvents;
 
-    public ArrayList<Events> getDayOneEvents() {
+    public ArrayList<Event> getDayOneEvents() {
         return dayOneEvents;
     }
 
-    public void setDayOneEvents(ArrayList<Events> dayOneEvents) {
+    public void setDayOneEvents(ArrayList<Event> dayOneEvents) {
         this.dayOneEvents = dayOneEvents;
     }
 
-    public ArrayList<Events> getDayTwoEvents() {
+    public ArrayList<Event> getDayTwoEvents() {
         return dayTwoEvents;
     }
 
-    public void setDayTwoEvents(ArrayList<Events> dayTwoEvents) {
+    public void setDayTwoEvents(ArrayList<Event> dayTwoEvents) {
         this.dayTwoEvents = dayTwoEvents;
     }
 
@@ -35,7 +35,7 @@ public class EventsResponse implements Parcelable {
 
     }
 
-    public EventsResponse(ArrayList<Events> dayOneEvents, ArrayList<Events> dayTwoEvents) {
+    public EventsResponse(ArrayList<Event> dayOneEvents, ArrayList<Event> dayTwoEvents) {
 
         this.dayOneEvents = dayOneEvents;
         this.dayTwoEvents = dayTwoEvents;
@@ -53,8 +53,8 @@ public class EventsResponse implements Parcelable {
     }
 
     protected EventsResponse(Parcel in) {
-        this.dayOneEvents = in.createTypedArrayList(Events.CREATOR);
-        this.dayTwoEvents = in.createTypedArrayList(Events.CREATOR);
+        this.dayOneEvents = in.createTypedArrayList(Event.CREATOR);
+        this.dayTwoEvents = in.createTypedArrayList(Event.CREATOR);
     }
 
     public static final Creator<EventsResponse> CREATOR = new Creator<EventsResponse>() {

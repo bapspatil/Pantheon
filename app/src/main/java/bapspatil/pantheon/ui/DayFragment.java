@@ -3,6 +3,7 @@ package bapspatil.pantheon.ui;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -18,7 +19,7 @@ import java.util.ArrayList;
 
 import bapspatil.pantheon.R;
 import bapspatil.pantheon.adapters.EventsRecyclerViewAdapter;
-import bapspatil.pantheon.model.Events;
+import bapspatil.pantheon.model.Event;
 import bapspatil.pantheon.model.EventsResponse;
 import bapspatil.pantheon.network.RetrofitAPI;
 import butterknife.BindView;
@@ -37,7 +38,7 @@ public class DayFragment extends Fragment {
     @BindView(R.id.progress_bar) AVLoadingIndicatorView progressBar;
 
     private static final String DAY = "day";
-    private ArrayList<Events> eventsList = new ArrayList<>();
+    private ArrayList<Event> eventsList = new ArrayList<>();
     private EventsRecyclerViewAdapter eventsAdapter;
 
     public DayFragment() {
@@ -60,12 +61,16 @@ public class DayFragment extends Fragment {
 
         recyclerViewInit();
 
+        return view;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
         if (getArguments() != null) {
             int dayNumber = getArguments().getInt(DAY);
             fetchDayEvents(dayNumber);
         }
-
-        return view;
     }
 
     private void recyclerViewInit() {
@@ -77,54 +82,56 @@ public class DayFragment extends Fragment {
         eventsRecyclerView.setAdapter(alphaInAnimationAdapter);
     }
 
-    private void fetchDayEvents(int dayNumber) {
+    public void fetchDayEvents(int dayNumber) {
         RetrofitAPI retrofitAPI = RetrofitAPI.retrofit.create(RetrofitAPI.class);
         Call<EventsResponse> eventsResponseCall = retrofitAPI.getEvents();
-        if(dayNumber == 0) {
-            eventsResponseCall.enqueue(new Callback<EventsResponse>() {
-                @Override
-                public void onResponse(Call<EventsResponse> call, Response<EventsResponse> response) {
-                    if(response.body() != null) {
-                        eventsList.addAll(response.body().getDayOneEvents());
-                        eventsAdapter.notifyDataSetChanged();
-                        progressBar.setVisibility(View.GONE);
-                        eventsRecyclerView.setVisibility(View.VISIBLE);
+        switch (dayNumber) {
+            case 0:
+                eventsResponseCall.enqueue(new Callback<EventsResponse>() {
+                    @Override
+                    public void onResponse(Call<EventsResponse> call, Response<EventsResponse> response) {
+                        if (response.body() != null) {
+                            eventsList.addAll(response.body().getDayOneEvents());
+                            eventsAdapter.notifyDataSetChanged();
+                            progressBar.setVisibility(View.GONE);
+                            eventsRecyclerView.setVisibility(View.VISIBLE);
+                        }
                     }
-                }
 
-                @Override
-                public void onFailure(Call<EventsResponse> call, Throwable t) {
-                    CookieBar.Build(getActivity())
-                            .setTitle("Network problem, bruh!")
-                            .setMessage("Make sure you're connected to the Internet, and launch the app again.")
-                            .setDuration(7000)
-                            .show();
-                    progressBar.setVisibility(View.GONE);
-                }
-            });
-        } else {
-            eventsResponseCall.enqueue(new Callback<EventsResponse>() {
-                @Override
-                public void onResponse(Call<EventsResponse> call, Response<EventsResponse> response) {
-                    if(response.body() != null) {
-                        eventsList.addAll(response.body().getDayTwoEvents());
-                        eventsAdapter.notifyDataSetChanged();
+                    @Override
+                    public void onFailure(Call<EventsResponse> call, Throwable t) {
+                        CookieBar.Build(getActivity())
+                                .setTitle("Network problem, bruh!")
+                                .setMessage("Make sure you're connected to the Internet, and launch the app again.")
+                                .setDuration(7000)
+                                .show();
                         progressBar.setVisibility(View.GONE);
-                        eventsRecyclerView.setVisibility(View.VISIBLE);
                     }
-                }
+                });
+                break;
+            case 1:
+                eventsResponseCall.enqueue(new Callback<EventsResponse>() {
+                    @Override
+                    public void onResponse(Call<EventsResponse> call, Response<EventsResponse> response) {
+                        if (response.body() != null) {
+                            eventsList.addAll(response.body().getDayTwoEvents());
+                            eventsAdapter.notifyDataSetChanged();
+                            progressBar.setVisibility(View.GONE);
+                            eventsRecyclerView.setVisibility(View.VISIBLE);
+                        }
+                    }
 
-                @Override
-                public void onFailure(Call<EventsResponse> call, Throwable t) {
-                    CookieBar.Build(getActivity())
-                            .setTitle("Network problem, bruh!")
-                            .setMessage("Make sure you're connected to the Internet, and launch the app again.")
-                            .setDuration(7000)
-                            .show();
-                    progressBar.setVisibility(View.GONE);
-                }
-            });
+                    @Override
+                    public void onFailure(Call<EventsResponse> call, Throwable t) {
+                        CookieBar.Build(getActivity())
+                                .setTitle("Network problem, bruh!")
+                                .setMessage("Make sure you're connected to the Internet, and launch the app again.")
+                                .setDuration(7000)
+                                .show();
+                        progressBar.setVisibility(View.GONE);
+                    }
+                });
+                break;
         }
     }
-
 }

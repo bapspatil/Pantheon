@@ -9,7 +9,7 @@ import com.google.gson.annotations.SerializedName;
  * Created by bapspatil
  */
 
-public class Events implements Parcelable {
+public class Event implements Parcelable {
     @SerializedName("time") private String time;
     @SerializedName("title") private String title;
     @SerializedName("body") private String body;
@@ -65,11 +65,11 @@ public class Events implements Parcelable {
         this.contact = contact;
     }
 
-    public Events() {
+    public Event() {
 
     }
 
-    public Events(String time, String title, String body, String location, String maxMembers, String contact) {
+    public Event(String time, String title, String body, String location, String maxMembers, String contact) {
 
         this.time = time;
         this.title = title;
@@ -94,7 +94,7 @@ public class Events implements Parcelable {
         dest.writeString(this.contact);
     }
 
-    protected Events(Parcel in) {
+    protected Event(Parcel in) {
         this.time = in.readString();
         this.title = in.readString();
         this.body = in.readString();
@@ -103,15 +103,15 @@ public class Events implements Parcelable {
         this.contact = in.readString();
     }
 
-    public static final Creator<Events> CREATOR = new Creator<Events>() {
+    public static final Creator<Event> CREATOR = new Creator<Event>() {
         @Override
-        public Events createFromParcel(Parcel source) {
-            return new Events(source);
+        public Event createFromParcel(Parcel source) {
+            return new Event(source);
         }
 
         @Override
-        public Events[] newArray(int size) {
-            return new Events[size];
+        public Event[] newArray(int size) {
+            return new Event[size];
         }
     };
 }

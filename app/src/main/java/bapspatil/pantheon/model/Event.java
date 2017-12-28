@@ -4,12 +4,13 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import com.google.gson.annotations.SerializedName;
+import com.orm.SugarRecord;
 
 /**
  * Created by bapspatil
  */
 
-public class Event implements Parcelable {
+public class Event extends SugarRecord implements Parcelable {
     @SerializedName("time") private String time;
     @SerializedName("title") private String title;
     @SerializedName("body") private String body;

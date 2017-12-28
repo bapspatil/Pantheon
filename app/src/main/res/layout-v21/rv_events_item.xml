@@ -125,11 +125,24 @@
                 android:id="@+id/call_iv"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
-                android:layout_marginLeft="16dp"
+                android:layout_marginLeft="8dp"
                 android:background="?android:attr/selectableItemBackgroundBorderless"
                 android:clickable="true"
                 android:focusable="true"
                 android:src="@drawable/ic_call_white_24dp"
+                app:civ_border_color="@color/eventsPrimaryDark"
+                app:civ_border_width="6dp"
+                app:civ_circle_background_color="@color/eventsPrimaryDark"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/fav_iv"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginLeft="6dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/ic_favorite_border_white_24dp"
                 app:civ_border_color="@color/eventsPrimaryDark"
                 app:civ_border_width="6dp"
                 app:civ_circle_background_color="@color/eventsPrimaryDark"/>

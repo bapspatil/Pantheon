@@ -133,12 +133,6 @@ public class DayFragment extends Fragment {
                     }
                 });
                 break;
-            case 2:
-                eventsList.addAll(Event.listAll(Event.class));
-                eventsAdapter.notifyDataSetChanged();
-                progressBar.setVisibility(View.GONE);
-                eventsRecyclerView.setVisibility(View.VISIBLE);
-                break;
         }
     }
 }

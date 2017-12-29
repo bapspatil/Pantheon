@@ -12,6 +12,7 @@ import bapspatil.pantheon.ui.DayFragment;
  */
 
 public class EventsViewPagerAdapter extends FragmentStatePagerAdapter {
+    private final String[] pages = new String[]{"DAY 1", "DAY 2", "FAVORITES"};
 
     public EventsViewPagerAdapter(FragmentManager fm) {
         super(fm);
@@ -24,19 +25,12 @@ public class EventsViewPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public int getCount() {
-        return 2;
+        return 3;
     }
 
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {
-        switch (position) {
-            case 0:
-                return "DAY 1";
-            case 1:
-                return "DAY 2";
-            default:
-                return "DAY 1";
-        }
+        return pages[position];
     }
 }

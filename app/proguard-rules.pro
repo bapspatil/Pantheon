@@ -40,3 +40,12 @@
 # AVLoadingIndicatorView
 -keep class com.wang.avi.** { *; }
 -keep class com.wang.avi.indicators.** { *; }
+
+# Picasso
+-dontwarn com.squareup.okhttp.**
+
+# NineOldAndroids
+-keep class com.nineoldandroids.animation.** { *; }
+-keep interface com.nineoldandroids.animation.** { *; }
+-keep class com.nineoldandroids.view.** { *; }
+-keep interface com.nineoldandroids.view.** { *; }

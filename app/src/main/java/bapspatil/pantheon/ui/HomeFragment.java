@@ -12,7 +12,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.daimajia.slider.library.Indicators.PagerIndicator;
+import com.daimajia.slider.library.SliderLayout;
+import com.daimajia.slider.library.SliderTypes.BaseSliderView;
+import com.daimajia.slider.library.SliderTypes.TextSliderView;
+
 import org.aviran.cookiebar2.CookieBar;
+
+import java.util.HashMap;
 
 import bapspatil.pantheon.R;
 import butterknife.BindView;
@@ -26,6 +33,8 @@ public class HomeFragment extends Fragment {
     @BindView(R.id.about_app_iv) ImageView aboutAppImageView;
     @BindView(R.id.share_cv) CardView shareCardView;
     @BindView(R.id.location_cv) CardView locationCardView;
+    @BindView(R.id.throwback_slider) SliderLayout throwbackSlider;
+    @BindView(R.id.throwback_slider_indicator) PagerIndicator throwBackSliderIndicator;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -36,6 +45,8 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         ButterKnife.bind(this, view);
+
+        setupSlider();
 
         shareCardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,4 +94,30 @@ public class HomeFragment extends Fragment {
         return view;
     }
 
+    private void setupSlider() {
+        HashMap<String,Integer> slidesMap = new HashMap<>();
+        slidesMap.put("We can't wait for Pantheon 2018, stay tuned!", R.drawable.slide5);
+        slidesMap.put("Lots of flash mobs and street dancing...", R.drawable.slide4);
+        slidesMap.put("Pantheon 2016",R.drawable.slide0);
+        slidesMap.put("Aathma were our musical guests!",R.drawable.slide2);
+        slidesMap.put("Thermal Projekt were here!",R.drawable.slide1);
+        slidesMap.put("Argenil, the Bangalore-based EDM duo performed!", R.drawable.slide3);
+
+        for(String caption : slidesMap.keySet()) {
+            TextSliderView textSliderView = new TextSliderView(getContext());
+            textSliderView
+                    .description(caption)
+                    .image(slidesMap.get(caption))
+                    .setScaleType(BaseSliderView.ScaleType.CenterCrop);
+
+            throwbackSlider.addSlider(textSliderView);
+        }
+        throwbackSlider.setCustomIndicator(throwBackSliderIndicator);
+    }
+
+    @Override
+    public void onStop() {
+        throwbackSlider.stopAutoCycle();
+        super.onStop();
+    }
 }

@@ -18,5 +18,10 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.]]></string>
+    <string name="introduction">Brace yourselves....Pantheon is back! RNSIT brings you Pantheon 2018. A bigger, better and brighter edition of the biennial techno-cultural fest at RNS Institute of Technology. Over 50 events leave you spoilt for choice. Like, share and spread the word.</string>
+    <string name="faqs">Q. Where can I register for events?\nA. Event registration will be on-spot.\n\n
+        Q. How can I get updates regarding the events?\nA. We\'ll send you a notification about any updates regarding our events and the fest. If you miss these notifications, you can also see them in the Updates screen.\n\n
+        Q. How do I contact the event coordinators?\nA. There\'s a call button at the bottom-right corner of every event; click on that to call the coordinator.
+    </string>
 
 </resources>

@@ -8,8 +8,8 @@ android {
         applicationId "bapspatil.pantheon"
         minSdkVersion 19
         targetSdkVersion 27
-        versionCode 5
-        versionName "zero.five"
+        versionCode 6
+        versionName "zero.six"
     }
     buildTypes {
         release {

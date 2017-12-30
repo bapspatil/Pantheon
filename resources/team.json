@@ -1,4 +1,17 @@
 {
+    "secr": [
+        {
+            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/prashanth_reddy_tech.jpg",
+            "name":"Prashanth Reddy"
+        }
+
+    ],
+    "jsec": [
+        {
+            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/prashanth_reddy_tech.jpg",
+            "name":"Prashanth Reddy"
+        }
+    ],
     "acct": [
         {
             "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/prashanth_reddy_tech.jpg",
@@ -30,12 +43,6 @@
         }
     ],
     "evnt": [
-        {
-            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/prashanth_reddy_tech.jpg",
-            "name":"Prashanth Reddy"
-        }
-    ],
-    "hosp": [
         {
             "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/prashanth_reddy_tech.jpg",
             "name":"Prashanth Reddy"

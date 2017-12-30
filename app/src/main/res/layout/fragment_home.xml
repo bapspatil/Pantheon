@@ -126,17 +126,16 @@
 
         <TextView
             style="@style/ContextTextViewStyle"
-            android:layout_gravity="left"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/titillium_bold"
-            android:gravity="left"
             android:text="F.A.Q.s"
             android:textSize="18sp"
             android:textStyle="bold"/>
 
         <TextView
             style="@style/ContextTextViewStyle"
-            android:padding="8dp"
+            android:layout_gravity="left"
+            android:gravity="left"
             android:text="@string/faqs"/>
 
         <TextView

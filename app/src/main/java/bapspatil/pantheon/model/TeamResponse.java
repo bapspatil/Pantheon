@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class TeamResponse implements Parcelable {
     @SerializedName("tech") private ArrayList<Team> techTeam;
     @SerializedName("deco") private ArrayList<Team> decoTeam;
-    @SerializedName("logistics") private ArrayList<Team> logisticsTeam;
+    @SerializedName("logi") private ArrayList<Team> logisticsTeam;
 
     public ArrayList<Team> getTechTeam() {
         return techTeam;

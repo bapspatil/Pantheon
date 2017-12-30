@@ -1,42 +1,94 @@
 {
-    "tech": [
+    "acct": [
         {
-            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/prashanth_reddy.jpg",
+            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/prashanth_reddy_tech.jpg",
             "name":"Prashanth Reddy"
-        },
+        }
+    ],
+    "anch": [
         {
-            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/bapusaheb_patil.png",
-            "name":"Bapusaheb Patil"
-        },
+            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/prashanth_reddy_tech.jpg",
+            "name":"Prashanth Reddy"
+        }
+    ],
+    "cont": [
         {
-            "avatar":"",
-            "name":"Adithya D"
+            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/prashanth_reddy_tech.jpg",
+            "name":"Prashanth Reddy"
         }
     ],
     "deco": [
         {
-            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/namratha_bhat.jpg",
+            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/namratha_bhat_deco.jpg",
             "name":"Namratha Bhat"
         }
     ],
-    "logistics": [
+    "desn": [
         {
-            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/sumukh.jpg",
+            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/prashanth_reddy_tech.jpg",
+            "name":"Prashanth Reddy"
+        }
+    ],
+    "evnt": [
+        {
+            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/prashanth_reddy_tech.jpg",
+            "name":"Prashanth Reddy"
+        }
+    ],
+    "hosp": [
+        {
+            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/prashanth_reddy_tech.jpg",
+            "name":"Prashanth Reddy"
+        }
+    ],
+    "jkbx": [
+        {
+            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/prashanth_reddy_tech.jpg",
+            "name":"Prashanth Reddy"
+        }
+    ],
+    "logi": [
+        {
+            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/sumukh_logistics.jpg",
             "name":"Sumukh"
         }
     ],
-    "content_writers": [
+    "phty": [
         {
-            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/prashanth_reddy.jpg",
+            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/sumukh_logistics.jpg",
+            "name":"Sumukh"
+        }
+    ],
+    "publ": [
+        {
+            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/prashanth_reddy_tech.jpg",
+            "name":"Prashanth Reddy"
+        }
+    ],
+    "spon": [
+        {
+            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/prashanth_reddy_tech.jpg",
+            "name":"Prashanth Reddy"
+        }
+    ],
+    "tech": [
+        {
+            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/prashanth_reddy_tech.jpg",
             "name":"Prashanth Reddy"
         },
         {
-            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/bapusaheb_patil.png",
+            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/bapusaheb_patil_tech.png",
             "name":"Bapusaheb Patil"
         },
         {
             "avatar":"",
             "name":"Adithya D"
+        }
+    ],
+    "volt": [
+        {
+            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/sumukh_logistics.jpg",
+            "name":"Sumukh"
         }
     ]
 }

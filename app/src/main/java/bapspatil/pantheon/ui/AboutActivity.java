@@ -19,18 +19,19 @@ import java.util.Arrays;
 import bapspatil.pantheon.BuildConfig;
 import bapspatil.pantheon.R;
 import bapspatil.pantheon.adapters.LibrariesRecyclerViewAdapter;
+import bapspatil.pantheon.utils.GlideApp;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class AboutActivity extends AppCompatActivity {
 
     @BindView(R.id.toolbar) Toolbar toolbar;
+    @BindView(R.id.baps_iv) ImageView bapsImageView;
     @BindView(R.id.google_play_iv) ImageView playButton;
     @BindView(R.id.github_iv) ImageView githubButton;
     @BindView(R.id.twitter_iv) ImageView twitterButton;
     @BindView(R.id.chrome_iv) ImageView chromeButton;
     @BindView(R.id.version_tv) TextView versionTextView;
-    @BindView(R.id.libraries_rv) RecyclerView librariesRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,59 +42,39 @@ public class AboutActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(null);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        GlideApp.with(this)
+                .load("https://github.com/bapspatil.png")
+                .dontAnimate()
+                .placeholder(R.drawable.user_placeholder)
+                .error(R.drawable.user_placeholder)
+                .fallback(R.drawable.user_placeholder)
+                .into(bapsImageView);
+
         versionTextView.setText(BuildConfig.VERSION_NAME + "\n(version code: " + BuildConfig.VERSION_CODE + ")" );
 
-        ArrayList<String> libraries = new ArrayList<>(Arrays.asList(
-                "Android Support Libraries",
-                "GSON | google",
-                "Glide | bumptech",
-                "Butter Knife | jakewharton",
-                "Retrofit | squareup",
-                "CookieBar2 | aviranabady",
-                "CircleImageView | hdodenhof",
-                "Crescento | developer-shivam",
-                "BottomBar | roughike",
-                "Recyclerview-Animators | wasabeef",
-                "AVLoadingIndicatorView | 81813780"
-        ));
-        librariesRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        librariesRecyclerView.setAdapter(new LibrariesRecyclerViewAdapter(this, libraries));
-
-        playButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String url = "https://play.google.com/store/apps/dev?id=7368032842071222295";
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(url));
-                startActivity(i);
-            }
+        playButton.setOnClickListener(view -> {
+            String url = "https://play.google.com/store/apps/dev?id=7368032842071222295";
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse(url));
+            startActivity(i);
         });
-        chromeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String url = "http://www.bapspatil.com";
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(url));
-                startActivity(i);
-            }
+        chromeButton.setOnClickListener(view -> {
+            String url = "https://bapspatil.com";
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse(url));
+            startActivity(i);
         });
-        githubButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String url = "https://github.com/bapspatil";
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(url));
-                startActivity(i);
-            }
+        githubButton.setOnClickListener(view -> {
+            String url = "https://github.com/bapspatil";
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse(url));
+            startActivity(i);
         });
-        twitterButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String url = "https://twitter.com/baps_patil";
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(url));
-                startActivity(i);
-            }
+        twitterButton.setOnClickListener(view -> {
+            String url = "https://twitter.com/baps_patil";
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse(url));
+            startActivity(i);
         });
     }
 

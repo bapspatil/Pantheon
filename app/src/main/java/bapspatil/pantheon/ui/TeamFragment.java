@@ -49,7 +49,7 @@ public class TeamFragment extends Fragment {
     private TeamRecyclerViewAdapter techTeamAdapter, decoTeamAdapter, logisticsTeamAdapter;
 
     @BindView(R.id.tech_team_rv) RecyclerView techTeamRecyclerView;
-    @BindView(R.id.deco_team_rv) RecyclerView decoTeamRecyclerView;
+    @BindView(R.id.camp_team_rv) RecyclerView decoTeamRecyclerView;
     @BindView(R.id.logistics_team_rv) RecyclerView logisticsTeamRecyclerView;
     @BindView(R.id.appbar) AppBarLayout appBar;
     @BindView(R.id.collapsing_bar) CollapsingToolbarLayout collapsingToolbar;
@@ -128,7 +128,7 @@ public class TeamFragment extends Fragment {
 
             @Override
             public void onFailure(Call<TeamResponse> call, Throwable t) {
-                CookieBar.Build(getActivity())
+                CookieBar.build(getActivity())
                         .setTitle("Network problem, bruh!")
                         .setMessage("Make sure you're connected to the Internet, and launch the app again.")
                         .setDuration(7000)

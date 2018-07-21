@@ -101,7 +101,7 @@ public class DayFragment extends Fragment {
 
                     @Override
                     public void onFailure(Call<EventsResponse> call, Throwable t) {
-                        CookieBar.Build(getActivity())
+                        CookieBar.build(getActivity())
                                 .setTitle("Network problem, bruh!")
                                 .setMessage("Make sure you're connected to the Internet, and launch the app again.")
                                 .setDuration(7000)
@@ -124,7 +124,7 @@ public class DayFragment extends Fragment {
 
                     @Override
                     public void onFailure(Call<EventsResponse> call, Throwable t) {
-                        CookieBar.Build(getActivity())
+                        CookieBar.build(getActivity())
                                 .setTitle("Network problem, bruh!")
                                 .setMessage("Make sure you're connected to the Internet, and launch the app again.")
                                 .setDuration(7000)

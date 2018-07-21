@@ -48,60 +48,51 @@ public class HomeFragment extends Fragment {
 
         setupSlider();
 
-        shareCardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                CookieBar.Build(getActivity())
-                        .setTitle("Sharing is caring, apparently.")
-                        .setMessage("Thanks for sharing our Pantheon app!")
-                        .setBackgroundColor(R.color.purple)
-                        .setDuration(6000)
-                        .show();
-                Intent shareIntent = new Intent(Intent.ACTION_SEND);
-                shareIntent.setType("text/plain");
-                shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Pantheon 2018");
-                String appendedString = "Download the official Pantheon 2018 companion app for the latest updates about the events in Pantheon 2018, brought to you by RNSIT, here:\n";
-                appendedString = appendedString + "https://play.google.com/store/apps/details?id=bapspatil.pantheon\n";
-                shareIntent.putExtra(Intent.EXTRA_TEXT, appendedString);
-                startActivity(Intent.createChooser(shareIntent, "Where do you want to share the Pantheon app?"));
-            }
+        shareCardView.setOnClickListener(view13 -> {
+            CookieBar.build(getActivity())
+                    .setTitle("Sharing is caring, apparently.")
+                    .setMessage("Thanks for sharing our Pantheon app!")
+                    .setBackgroundColor(R.color.purple)
+                    .setDuration(6000)
+                    .show();
+            Intent shareIntent = new Intent(Intent.ACTION_SEND);
+            shareIntent.setType("text/plain");
+            shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Pantheon 2018");
+            String appendedString = "Download the official Pantheon companion app for the latest updates about the activities in Pantheon here:\n";
+            appendedString = appendedString + "https://play.google.com/store/apps/details?id=bapspatil.pantheon\n";
+            shareIntent.putExtra(Intent.EXTRA_TEXT, appendedString);
+            startActivity(Intent.createChooser(shareIntent, "Where do you want to share the Pantheon app?"));
         });
 
-        locationCardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                CookieBar.Build(getActivity())
-                        .setTitle("Still having problems getting to RNSIT?")
-                        .setMessage("Just contact any one of our event coordinators, and they'll guide you (they have a good idea of where our college is).")
-                        .setBackgroundColor(R.color.purple)
-                        .setDuration(6000)
-                        .show();
-                String location = "https://maps.google.com/maps?q=loc:" + "12.9021902" + "," + "77.518582" + " (RNS Institute of Technology)";
-                Intent locationIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(location));
-                startActivity(locationIntent);
+        locationCardView.setOnClickListener(view12 -> {
+            CookieBar.build(getActivity())
+                    .setTitle("Still having problems getting to our event?")
+                    .setMessage("Just contact any one of our event coordinators, and they'll guide you (they have a good idea of where our college is).")
+                    .setBackgroundColor(R.color.purple)
+                    .setDuration(6000)
+                    .show();
+            String location = "https://maps.google.com/maps?q=loc:" + "37.4220041" + "," + "-122.0862462" + " (Googleplex)";
+            Intent locationIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(location));
+            startActivity(locationIntent);
 
-            }
         });
 
-        aboutAppImageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getActivity(), AboutActivity.class);
-                ActivityOptionsCompat options = ActivityOptionsCompat.makeCustomAnimation(getActivity(), android.R.anim.fade_in, android.R.anim.fade_out);
-                startActivity(i, options.toBundle());
-            }
+        aboutAppImageView.setOnClickListener(view1 -> {
+            Intent i = new Intent(getActivity(), AboutActivity.class);
+            ActivityOptionsCompat options = ActivityOptionsCompat.makeCustomAnimation(getActivity(), android.R.anim.fade_in, android.R.anim.fade_out);
+            startActivity(i, options.toBundle());
         });
         return view;
     }
 
     private void setupSlider() {
         HashMap<String,Integer> slidesMap = new HashMap<>();
-        slidesMap.put("We can't wait for Pantheon 2018, stay tuned!", R.drawable.slide5);
-        slidesMap.put("Lots of flash mobs and street dancing...", R.drawable.slide4);
-        slidesMap.put("Pantheon 2016",R.drawable.slide0);
-        slidesMap.put("Aathma were our musical guests!",R.drawable.slide2);
-        slidesMap.put("Thermal Projekt were here!",R.drawable.slide1);
-        slidesMap.put("Argenil, the Bangalore-based EDM duo performed!", R.drawable.slide3);
+        slidesMap.put("We look forward to this year's event!", R.drawable.slide5);
+        slidesMap.put("Lots of activities to participate in!", R.drawable.slide4);
+        slidesMap.put("Party hall's for everyone!",R.drawable.slide0);
+        slidesMap.put("We had an excellent art show!",R.drawable.slide2);
+        slidesMap.put("Yes, we had a DJ play.",R.drawable.slide1);
+        slidesMap.put("The band was great!", R.drawable.slide3);
 
         for(String caption : slidesMap.keySet()) {
             TextSliderView textSliderView = new TextSliderView(getContext());

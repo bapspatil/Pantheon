@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
         if (backCookieBar != null) {
             finish();
         } else {
-            backCookieBar = CookieBar.Build(MainActivity.this)
+            backCookieBar = CookieBar.build(MainActivity.this)
                     .setLayoutGravity(Gravity.BOTTOM)
                     .setTitle("Hit the back button again to quit.")
                     .setDuration(7000)

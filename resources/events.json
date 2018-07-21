@@ -2,43 +2,67 @@
     "day_one": [
         {
             "time": "10:00 AM",
-            "title": "Coming soon!",
-            "body": "Our CAT team will provide you with the events list and their details soon. Stay tuned!",
+            "title": "Cook Off!",
+            "body": "There will two rounds within each matchup; a savory round and a sweet round. The cooking competitions continue until one winner is identified.",
             "location": "Admin Block, Room 203",
-            "maxMembers": "3",
+            "maxMembers": "2",
             "contact": "9999999999"
         },
         {
-            "time": "10:00 AM",
-            "title": "Coming soon!",
-            "body": "Our CAT team will provide you with the events list and their details soon. Stay tuned!",
-            "location": "Admin Block, Room 203",
-            "maxMembers": "3",
+            "time": "11:00 AM",
+            "title": "Hula Hoop Circle",
+            "body": "Have everyone form a circle and hold hands and put a hula hoop on the shoulder of one of the people. The goal of the activity is to get the hoop around all the members of the circle dropping hands.",
+            "location": "Admin Block, Room 102",
+            "maxMembers": "2",
             "contact": "9999999999"
         },
         {
-            "time": "10:00 AM",
-            "title": "Coming soon!",
-            "body": "Our CAT team will provide you with the events list and their details soon. Stay tuned!",
-            "location": "Admin Block, Room 203",
-            "maxMembers": "3",
+            "time": "12:00 PM",
+            "title": "Prank Wars",
+            "body": "The pranks should be fun and harmless, but brew a sense of friendly mischief and competition.",
+            "location": "Mech Block, Room 042",
+            "maxMembers": "1",
             "contact": "9999999999"
         },
         {
-            "time": "10:00 AM",
-            "title": "Coming soon!",
-            "body": "Our CAT team will provide you with the events list and their details soon. Stay tuned!",
-            "location": "Admin Block, Room 203",
+            "time": "01:00 PM",
+            "title": "The 80s Dance Off",
+            "body": "A number of dancers compete against each other until a winner is declared, the 1980s style.",
+            "location": "Stage-A Area",
             "maxMembers": "3",
             "contact": "9999999999"
         }
     ],
     "day_two": [
         {
-            "time": "10:10 AM",
-            "title": "Seriously. We'll let you know soon enough.",
-            "body": "We promise to send you a notification once we finalize our events list and the other nitty-gritty details.",
-            "location": "Main Stage Area",
+            "time": "10:30 AM",
+            "title": "The Bridge Challenge",
+            "body": "Each team will create a small bridge that can connect two books placed two feet apart. The team with the bridge that can hold the most weight will be crowned the winner.",
+            "location": "Stage-B Area",
+            "maxMembers": "4",
+            "contact": "8888888888"
+        },
+        {
+            "time": "11:30 AM",
+            "title": "Who's Baby Is That?",
+            "body": "Have everyone bring in a baby picture of themselves. Hold a vote seeing if people can correctly match the pictures to their respective persons.",
+            "location": "Art Room",
+            "maxMembers": "1",
+            "contact": "8888888888"
+        },
+        {
+            "time": "12:30 PM",
+            "title": "Scavenger Hunt",
+            "body": "Clues all around the venue. The first team to find all clues and finish will be the winner.",
+            "location": "Exhibit Area",
+            "maxMembers": "4",
+            "contact": "8888888888"
+        },
+        {
+            "time": "01:30 PM",
+            "title": "Trivia Time!",
+            "body": "Each team will have the opportunity to win a point if they are the first to correctly answer a question. First to 10 points wins. 3 rounds.",
+            "location": "Room 105",
             "maxMembers": "3",
             "contact": "8888888888"
         }

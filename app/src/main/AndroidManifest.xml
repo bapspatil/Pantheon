@@ -16,7 +16,7 @@
         <activity
             android:name=".ui.MainActivity"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".ui.SplashActivity"
@@ -36,7 +36,7 @@
             android:launchMode="singleTop"
             android:parentActivityName=".ui.MainActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AboutAppTheme"></activity>
+            android:theme="@style/AboutAppTheme" />
 
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"

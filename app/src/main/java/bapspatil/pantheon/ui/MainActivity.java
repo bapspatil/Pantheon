@@ -12,7 +12,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.roughike.bottombar.BottomBar;
-import com.roughike.bottombar.OnTabSelectListener;
 
 import org.aviran.cookiebar2.CookieBar;
 
@@ -22,8 +21,11 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
-    @BindView(R.id.bottom_nav_view) BottomBar bottomNavigationView;
-    @BindView(R.id.toolbar) @Nullable Toolbar toolbar;
+    @BindView(R.id.bottom_nav_view)
+    BottomBar bottomNavigationView;
+    @BindView(R.id.toolbar)
+    @Nullable
+    Toolbar toolbar;
     private CookieBar backCookieBar;
 
     @Override
@@ -32,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        bottomNavigationView.setOnTabSelectListener(tabId -> handleBottomNavClicked(tabId));
+        bottomNavigationView.setOnTabSelectListener(this::handleBottomNavClicked);
     }
 
     private void handleBottomNavClicked(int item) {

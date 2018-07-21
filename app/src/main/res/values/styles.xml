@@ -18,6 +18,13 @@
         <item name="android:windowTranslucentNavigation">true</item>
     </style>
 
+    <style name="SplashTheme" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/background_splash</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
     <style name="AppTheme.Home" parent="AppTheme">
         <item name="colorPrimary">#F44336</item>
         <item name="colorPrimaryDark">#B71C1C</item>

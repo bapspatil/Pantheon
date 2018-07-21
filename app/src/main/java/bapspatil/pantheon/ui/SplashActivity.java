@@ -2,7 +2,6 @@ package bapspatil.pantheon.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -15,17 +14,12 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+
         hideSystemUI();
 
-        int SPLASH_TIME_OUT = 1500;
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent i = new Intent(SplashActivity.this, MainActivity.class);
-                ActivityOptionsCompat options = ActivityOptionsCompat.makeCustomAnimation(SplashActivity.this, android.R.anim.fade_in, android.R.anim.fade_out);
-                startActivity(i, options.toBundle());
-            }
-        }, SPLASH_TIME_OUT);
+        Intent i = new Intent(SplashActivity.this, MainActivity.class);
+        ActivityOptionsCompat options = ActivityOptionsCompat.makeCustomAnimation(SplashActivity.this, android.R.anim.fade_in, android.R.anim.fade_out);
+        startActivity(i, options.toBundle());
     }
 
     private void hideSystemUI() {

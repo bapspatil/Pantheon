@@ -32,12 +32,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        bottomNavigationView.setOnTabSelectListener(new OnTabSelectListener() {
-            @Override
-            public void onTabSelected(int tabId) {
-                handleBottomNavClicked(tabId);
-            }
-        });
+        bottomNavigationView.setOnTabSelectListener(tabId -> handleBottomNavClicked(tabId));
     }
 
     private void handleBottomNavClicked(int item) {

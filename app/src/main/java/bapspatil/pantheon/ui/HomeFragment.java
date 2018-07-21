@@ -57,7 +57,7 @@ public class HomeFragment extends Fragment {
                     .show();
             Intent shareIntent = new Intent(Intent.ACTION_SEND);
             shareIntent.setType("text/plain");
-            shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Pantheon 2018");
+            shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Pantheon");
             String appendedString = "Download the official Pantheon companion app for the latest updates about the activities in Pantheon here:\n";
             appendedString = appendedString + "https://play.google.com/store/apps/details?id=bapspatil.pantheon\n";
             shareIntent.putExtra(Intent.EXTRA_TEXT, appendedString);

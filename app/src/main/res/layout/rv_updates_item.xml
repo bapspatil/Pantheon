@@ -25,7 +25,7 @@
             android:paddingTop="8dp"
             android:textColor="@color/white"
             android:textSize="22sp"
-            tools:text="Welcome to the Pantheon 2018 app!"/>
+            tools:text="Welcome to the Pantheon app!"/>
         <TextView
             android:id="@+id/body_tv"
             android:layout_width="wrap_content"
@@ -36,7 +36,7 @@
             android:paddingTop="4dp"
             android:textColor="@color/white"
             android:textSize="14sp"
-            tools:text="We're currently doing all the super duper important stuff like planning events and making food arrangments for you guys. We'll send you a notification when we're done. So stick around!"/>
+            tools:text="We're currently doing all the super duper important stuff like planning events and making food arrangements for you guys. We'll send you a notification when we're done. So stick around!"/>
 
         <TextView
             android:id="@+id/timestamp_tv"

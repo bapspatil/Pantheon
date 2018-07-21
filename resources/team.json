@@ -1,101 +1,68 @@
 {
-    "secr": [
+    "tech": [
         {
-            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/prashanth_reddy_tech.jpg",
-            "name":"Prashanth Reddy"
-        }
-
-    ],
-    "jsec": [
+            "avatar": "https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/0.png",
+            "name" :"Guillermo Raffaele"
+        },
         {
-            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/prashanth_reddy_tech.jpg",
-            "name":"Prashanth Reddy"
-        }
-    ],
-    "acct": [
+            "avatar": "https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/1.png",
+            "name" :"Bonnie Riley"
+        },
         {
-            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/prashanth_reddy_tech.jpg",
-            "name":"Prashanth Reddy"
-        }
-    ],
-    "anch": [
+            "avatar": "https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/2.png",
+            "name" :"Lilja Peltola"
+        },
         {
-            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/prashanth_reddy_tech.jpg",
-            "name":"Prashanth Reddy"
+            "avatar": "https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/3.png",
+            "name" :"Christopher Gibson"
+        },
+        {
+            "avatar": "https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/4.png",
+            "name" :"Will Feldman"
         }
     ],
-    "cont": [
+    "camp": [
         {
-            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/prashanth_reddy_tech.jpg",
-            "name":"Prashanth Reddy"
-        }
-    ],
-    "deco": [
+            "avatar": "https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/5.png",
+            "name" :"Jamie Alexa"
+        },
         {
-            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/namratha_bhat_deco.jpg",
-            "name":"Namratha Bhat"
-        }
-    ],
-    "desn": [
+            "avatar": "https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/6.png",
+            "name" :"Leah Stevens"
+        },
         {
-            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/prashanth_reddy_tech.jpg",
-            "name":"Prashanth Reddy"
-        }
-    ],
-    "evnt": [
+            "avatar": "https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/7.png",
+            "name" :"Ferdinand Karl"
+        },
         {
-            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/prashanth_reddy_tech.jpg",
-            "name":"Prashanth Reddy"
-        }
-    ],
-    "jkbx": [
+            "avatar": "https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/8.png",
+            "name" :"Kelton Padgett"
+        },
         {
-            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/prashanth_reddy_tech.jpg",
-            "name":"Prashanth Reddy"
+            "avatar": "https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/9.png",
+            "name" :"Kaya Pryor"
         }
     ],
     "logi": [
         {
-            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/sumukh_logistics.jpg",
-            "name":"Sumukh"
-        }
-    ],
-    "phty": [
-        {
-            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/sumukh_logistics.jpg",
-            "name":"Sumukh"
-        }
-    ],
-    "publ": [
-        {
-            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/prashanth_reddy_tech.jpg",
-            "name":"Prashanth Reddy"
-        }
-    ],
-    "spon": [
-        {
-            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/prashanth_reddy_tech.jpg",
-            "name":"Prashanth Reddy"
-        }
-    ],
-    "tech": [
-        {
-            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/prashanth_reddy_tech.jpg",
-            "name":"Prashanth Reddy"
+            "avatar": "https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/10.png",
+            "name" :"Jordi Moyer"
         },
         {
-            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/bapusaheb_patil_tech.png",
-            "name":"Bapusaheb Patil"
+            "avatar": "https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/11.png",
+            "name" :"Jeshua Stout"
         },
         {
-            "avatar":"",
-            "name":"Adithya D"
-        }
-    ],
-    "volt": [
+            "avatar": "https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/12.png",
+            "name" :"Rene Wells"
+        },
         {
-            "avatar":"https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/sumukh_logistics.jpg",
-            "name":"Sumukh"
+            "avatar": "https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/13.png",
+            "name" :"Phoenix Walker"
+        },
+        {
+            "avatar": "https://raw.githubusercontent.com/bapspatil/Pantheon/master/resources/images/14.png",
+            "name" :"Andi Lane"
         }
     ]
 }

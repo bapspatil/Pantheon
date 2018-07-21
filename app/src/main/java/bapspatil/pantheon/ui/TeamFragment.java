@@ -115,7 +115,7 @@ public class TeamFragment extends Fragment {
                     techTeam.addAll(response.body().getTechTeam());
                     techTeamAdapter.notifyDataSetChanged();
 
-                    decoTeam.addAll(response.body().getDecoTeam());
+                    decoTeam.addAll(response.body().getCampTeam());
                     decoTeamAdapter.notifyDataSetChanged();
 
                     logisticsTeam.addAll(response.body().getLogisticsTeam());

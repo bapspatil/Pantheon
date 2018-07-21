@@ -25,7 +25,7 @@ public class EventsViewPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public int getCount() {
-        return 2;
+        return pages.length;
     }
 
     @Nullable

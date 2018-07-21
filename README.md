@@ -1,5 +1,5 @@
 # Pantheon
-A companion/guide app for an events app that can be used for event publicity.
+A companion/guide app for an event that can be used for event publicity and to show details regarding activities in the event.
 
 <a href='https://play.google.com/store/apps/details?id=bapspatil.pantheon&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width="30%" height="30%"/></a>
 

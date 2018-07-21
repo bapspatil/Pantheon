@@ -45,13 +45,10 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
         holder.mMembersTextView.setText(mEventsList.get(position).getMaxMembers());
         // To call the coordinator of the event
         final int i = position;
-        holder.mCallImageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent callIntent = new Intent(Intent.ACTION_DIAL);
-                callIntent.setData(Uri.parse("tel:" + mEventsList.get(i).getContact()));
-                mContext.startActivity(callIntent);
-            }
+        holder.mCallImageView.setOnClickListener(view -> {
+            Intent callIntent = new Intent(Intent.ACTION_DIAL);
+            callIntent.setData(Uri.parse("tel:" + mEventsList.get(i).getContact()));
+            mContext.startActivity(callIntent);
         });
     }
 

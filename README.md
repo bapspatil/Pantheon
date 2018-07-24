@@ -10,7 +10,7 @@ A companion/guide app for an event that can be used for event publicity and to s
 
 <img src="./design/screen4.png" width="35%">&ensp;<img src="./design/screen5.png" width="35%">
 
-## Libraries & Frameworks Used
+## Libraries Used
 * [Android Support Library](https://developer.android.com/topic/libraries/support-library/)
 * [Firebase](https://firebase.google.com/)
 * [Retrofit](https://github.com/square/retrofit/)
